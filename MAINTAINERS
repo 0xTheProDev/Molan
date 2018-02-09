@@ -1,0 +1,21 @@
+This file contains information about different modules of the application and their's respective maintainers.
+The web application is made on React stack, i.e., component-driven virtual DOM-based application.
+The API service is made on Flask, i.e., REST API in Python virtual environment.
+This application is licensed under GNU Public License v3 (See LICENSE for details).
+
+Team Information:
+
+1. Progyan Bhattacharya
+   Project Lead, Frontend Supervisor
+   Email: progyanb@acm.org
+   Website: http://codeprogyan.me
+
+2. Deepak Thakur
+   Project Co-ordinator, Designer
+   Email: dt19370@gmail.com
+
+3. Prakash Kumar
+   Backend Supervisor
+   Email: prakash.chy.10@gmail.com
+
+Module Information:
