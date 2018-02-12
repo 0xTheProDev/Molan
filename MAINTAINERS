@@ -19,3 +19,13 @@ Team Information:
    Email: prakash.chy.10@gmail.com
 
 Module Information:
+
+1. requirements.txt
+   Path: /requirements.txt
+   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+2. app.py
+   Path: /app.py
+   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+3. Config.py
+   Path: /Util/Config.py
+   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
