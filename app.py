@@ -1,4 +1,6 @@
 # Molan: Molan-API
+#
+# Author: Progyan Bhattacharya <progyanb@acm.org>
 # Copyright 2018 Tech-Mantra, All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -30,7 +32,7 @@ CORS(app)
 
 # REST API from Application
 api = Api(app)
-api.add_resource(Status, Config.API_PATH + "/status")
+api.add_resource(Status, Config.API_PATH + "/status", endpoint="status_ep")
 
 # Driver Program
 if __name__ == "__main__":

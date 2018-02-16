@@ -1,3 +1,6 @@
+# Storage for source codes and objects
+data/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

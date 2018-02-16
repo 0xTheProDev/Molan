@@ -1,0 +1,9 @@
+{
+    "C": {
+        "language": "C",
+        "standard": "C99",
+        "compiler": "gcc",
+        "cflags": "-std=c99 -pedantic -Werror -Wall",
+        "lflags": "-lm"
+    }
+}

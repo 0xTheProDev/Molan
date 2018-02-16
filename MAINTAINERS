@@ -29,3 +29,6 @@ Module Information:
 3. Config.py
    Path: /Util/Config.py
    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+4. Status.py
+   Path: /Controller/Status.py
+   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
