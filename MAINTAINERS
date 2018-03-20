@@ -20,15 +20,24 @@ Team Information:
 
 Module Information:
 
-1. requirements.txt
-   Path: /requirements.txt
-   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
-2. app.py
-   Path: /app.py
-   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
-3. Config.py
-   Path: /Util/Config.py
-   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
-4. Status.py
-   Path: /Controller/Status.py
-   Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+01. requirements.txt
+    Path: /requirements.txt
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+02. Application
+    Path: /app.py
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+03. Configuration
+    Path: /Util/Config.py
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+04. Extension
+    Path: /Util/Extension.py
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+05. Status
+    Path: /Controller/Status.py
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+06. Submit
+    Path: /Controller/Submit.py
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+07. Submit_C
+    Path: /Model/Submit_C.py
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>

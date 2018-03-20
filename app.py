@@ -32,8 +32,8 @@ CORS(app)
 
 # REST API from Application
 api = Api(app)
-api.add_resource(Status, Config.API_PATH + "/status", endpoint="status_ep")
-api.add_resource(Submit, Config.API_PATH + "/submit", endpoint="submit_ep")
+api.add_resource(Status, Config.API_PATH + "/status", endpoint = "status_ep")
+api.add_resource(Submit, Config.API_PATH + "/submit", endpoint = "submit_ep")
 
 # Driver Program
 if __name__ == "__main__":

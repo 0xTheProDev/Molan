@@ -16,102 +16,31 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
 from flask_restful import Resource
-from flask import request, jsonify
-import time
+from flask import request
 import json
-import os
-import subprocess
+from Model.Submit_C import build as cb
 
 class Submit(Resource):
     def post(self):
-        req_data = request.get_json()
-        name = int(time.time())
-    #print(ext)
-    #Processing for C-language
-        if(req_data["language"] == 'c'):
+        # Extract data from request
+        req_data = request.get_json(force = True)
+        req_id = req_data["id"]
+        source_code = req_data["source"]
+        input_data = req_data["input"] if req_data["haveInput"] else None
 
-            f = open("./data/%d.c" % name,  "w")
-            f.write(req_data['source'])
-            f.close()
-            if(req_data['haveInput'] == True):
-                fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data['input'])
-                fout = open("./data/text.out", "w")
-                ferr = open("./data/err.out", "w")
-                s =  subprocess.call(["gcc", "./data/%d.c" % name],stdin = None,stdout = None, stderr = ferr)
-                if(s == 0 ):
-                    r = subprocess.call("./a.out", stdin = fp, stdout = fout, stderr = ferr)
-                    if(r == 0):
-                            return jsonify(
-                                id = req_data["id"],
-                                status = "Success",
-                                input = json.loads(fp),
-                                output = json.loads(fout)
-                            )
-
-                    else:
-                            return jsonify(
-                                id = req_data["id"],
-                                status = "Runtime Error",
-                                input = json.loads(fp),
-                                output = json.loads(ferr)
-                            )
-
-                else:
-
-                    return jsonify(
-                        id = req_data["id"],
-                        status = "Compile Error",
-                        input = json.loads(fp),
-                        output = json.loads(ferr)
-                    )
-                    fout.close()
-                    fp.close()
-                    ferr.close()
-
-            else:
-                ferr = open("./data/err.out", "w")
-                s =  subprocess.call(["gcc", "./data/%d.c" % name],stdin = None,stdout = None, stderr = ferr)
-                if(s == 0):
-                    fout = open("./data/text.out", "w")
-                    r = subprocess.call("./a.out", stdin = None, stdout = fout, stderr = ferr)
-                    if(r == 0):
-
-                            return jsonify(
-                                id = req_data["id"],
-                                status = "Success",
-                                input = "null",
-                           #     output = json.load(fout)
-                            )
-
-                    else:
-                            return jsonify(
-                                id = req_data["id"],
-                                status = "Runtime Error",
-                                input = "null",
-                       #         output = json.load(ferr)
-                            )
-
-                else:
-
-                    return jsonify(
-                        id = req_data["id"],
-                        status = "Compile Error",
-                        input = "Null",
-                       # output = json.load(ferr)
-                    )
-                    fout.close()
-                    ferr.close()
-
+        # Build target for C program
+        if req_data["language"] == "c" or req_data["language"] == "C":
+            return cb(req_id, source_code, input_data)
+'''
     #Processing for C
-        elif(req_data["language"] == 'cpp'):
+        elif(req_data["language"] == "cpp"):
 
             f = open("./data/%d.cpp" % name,  "w")
-            f.write(req_data['source'])
+            f.write(req_data["source"])
             f.close()
-            if(req_data['haveInput'] == True):
+            if(req_data["haveInput"] == True):
                 fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data['input'])
+                fp.write(req_data["input"])
                 s =  subprocess.call(["g", "./data/%d.cpp" % name],stdin = None,stdout = None, stderr = None)
                 fout = open("./data/text.out", "w")
                 subprocess.call("./a.out", stdin = fp, stdout = fout)
@@ -123,14 +52,14 @@ class Submit(Resource):
                 subprocess.call("./a.out", stdin = None, stdout = fout)
                 fout.close()
     #Processing for python
-        elif(req_data["language"] == 'python') :
+        elif(req_data["language"] == "python") :
 
             f = open("./data/%d.py" % name,  "w")
-            f.write(req_data['source'])
+            f.write(req_data["source"])
             f.close()
-            if(req_data['haveInput'] == True):
+            if(req_data["haveInput"] == True):
                 fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data['input'])
+                fp.write(req_data["input"])
                 fout = open("./data/text.out", "w")
                 s =  subprocess.call(["python3", "./data/%d.py" % name],stdin = fp,stdout = fout, stderr = None)
                 fout.close()
@@ -142,11 +71,11 @@ class Submit(Resource):
     #Processing for java
         elif(req_data["language"] == "java") :
             f = open("./data/%d.java" % name,  "w")
-            f.write(req_data['source'])
+            f.write(req_data["source"])
             f.close()
-            if(req_data['haveInput'] == True):
+            if(req_data["haveInput"] == True):
                 fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data['input'])
+                fp.write(req_data["input"])
                 fout = open("./data/text.out", "w")
                 s =  subprocess.call(["javac", "./data/%d.java" % name],stdin = None,stdout = None, stderr = None)
                 #How can we run the java program as it will need the name of class to run.....
@@ -163,3 +92,4 @@ class Submit(Resource):
       #      output = tmp
         )
         return 200
+'''
