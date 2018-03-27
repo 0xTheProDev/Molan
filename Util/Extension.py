@@ -37,5 +37,19 @@ def extension(lang):
     timestamp = int(time())
     data_path = os.path.normpath(os.path.join(os.getcwd(), "./data"))
 
+    # Resolve file names
+    source_file = "{}/{}{}".format(data_path, timestamp, static(lang))
+    binary_file = "{}/{}".format(data_path, timestamp)
+    input_file = "{}/{}.in".format(data_path, timestamp)
+    output_file = "{}/{}.out".format(data_path,timestamp)
+    err_file = "{}/{}.err".format(data_path,timestamp)
+
     # Return source_file, binary_file, input_file, output_file, err_file
-    return "{}/{}{}".format(data_path, timestamp, static(lang)), "{}/{}".format(data_path, timestamp), "{}/{}.in".format(data_path, timestamp), "{}/{}.out".format(data_path, timestamp), "{}/{}.err".format(data_path, timestamp)
+    if lang == "java" or lang == "JAVA":
+        return source_file, "{}/{}".format(data_path, "Molan"), input_file, output_file, err_file
+
+    elif lang == "python" or lang == "Python" or lang == "js" or lang == "javascript" or lang == "Javascript":
+        return source_file, input_file, output_file, err_file
+
+    else:
+        return source_file, binary_file, input_file, output_file, err_file

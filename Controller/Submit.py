@@ -17,8 +17,13 @@
 
 from flask_restful import Resource
 from flask import request
-import json
-from Model.Submit_C import build as cb
+
+# Import build recepie
+from Model.Submit.Submit_C import build as cb
+from Model.Submit.Submit_CPP import build as cppb
+from Model.Submit.Submit_PY import build as pb
+from Model.Submit.Submit_JAVA import build as jab
+from Model.Submit.Submit_JS import build as jsb
 
 class Submit(Resource):
     def post(self):
@@ -31,65 +36,19 @@ class Submit(Resource):
         # Build target for C program
         if req_data["language"] == "c" or req_data["language"] == "C":
             return cb(req_id, source_code, input_data)
-'''
-    #Processing for C
-        elif(req_data["language"] == "cpp"):
 
-            f = open("./data/%d.cpp" % name,  "w")
-            f.write(req_data["source"])
-            f.close()
-            if(req_data["haveInput"] == True):
-                fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data["input"])
-                s =  subprocess.call(["g", "./data/%d.cpp" % name],stdin = None,stdout = None, stderr = None)
-                fout = open("./data/text.out", "w")
-                subprocess.call("./a.out", stdin = fp, stdout = fout)
-                fout.close()
-                fp.close()
-            else :
-                s =  subprocess.call(["g", "./data/%d.cpp" % name],stdin = None,stdout = None, stderr = None)
-                fout = open("./data/text.out", "w")
-                subprocess.call("./a.out", stdin = None, stdout = fout)
-                fout.close()
-    #Processing for python
-        elif(req_data["language"] == "python") :
+        # Build target for C++ program
+        elif req_data["language"] == "cpp" or req_data["language"] == "CPP" or req_data["language"] == "C++":
+            return cppb(req_id, source_code, input_data)
 
-            f = open("./data/%d.py" % name,  "w")
-            f.write(req_data["source"])
-            f.close()
-            if(req_data["haveInput"] == True):
-                fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data["input"])
-                fout = open("./data/text.out", "w")
-                s =  subprocess.call(["python3", "./data/%d.py" % name],stdin = fp,stdout = fout, stderr = None)
-                fout.close()
-                fp.close()
-            else:
-                fout = open("./data/text.out", "w")
-                s =  subprocess.call(["python3", "./data/%d.py" % name],stdin = None,stdout = fout, stderr = None)
-                fout.close()
-    #Processing for java
-        elif(req_data["language"] == "java") :
-            f = open("./data/%d.java" % name,  "w")
-            f.write(req_data["source"])
-            f.close()
-            if(req_data["haveInput"] == True):
-                fp = open("./data/%d.in" % name, "w")
-                fp.write(req_data["input"])
-                fout = open("./data/text.out", "w")
-                s =  subprocess.call(["javac", "./data/%d.java" % name],stdin = None,stdout = None, stderr = None)
-                #How can we run the java program as it will need the name of class to run.....
-                fout.close()
-                fp.close()
+        # Build target for Java program
+        elif req_data["language"] == "java" or req_data["language"] == "Java" or req_data["language"] == "JAVA":
+            return jab(req_id, source_code, input_data)
 
+        # Build target for Python program
+        elif req_data["language"] == "python" or req_data["language"] == "Python":
+            return pb(req_id, source_code, input_data)
 
-
-
-        return jsonify(
-            id = req_data["id"],
-            status = "Success",
-            input = req_data["input"],
-      #      output = tmp
-        )
-        return 200
-'''
+        # Build target for JavaScript program
+        elif req_data["language"] == "js" or req_data["language"] == "javascript" or req_data["language"] == "Javascript":
+            return jsb(req_id, source_code, input_data)

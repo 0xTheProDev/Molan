@@ -32,12 +32,24 @@ Module Information:
 04. Extension
     Path: /Util/Extension.py
     Maintainer: Progyan Bhattacharya <progyanb@acm.org>
-05. Status
+05. Status Controller
     Path: /Controller/Status.py
     Maintainer: Progyan Bhattacharya <progyanb@acm.org>
-06. Submit
+06. Submit Controller
     Path: /Controller/Submit.py
     Maintainer: Satyam Kumar <satyamvats5@gmail.com>
-07. Submit_C
-    Path: /Model/Submit_C.py
+07. Submit C
+    Path: /Model/Submit/Submit_C.py
     Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+08. Submit CPP
+    Path: /Model/Submit/Submit_CPP.py
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+09. Submit Java
+    Path: /Model/Submit/Submit_Java.py
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+10. Submit Python
+    Path: /Model/Submit/Submit_PY.py
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+11. Submit JavaScript
+    Path: /Model/Submit/Submit_JS.py
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>

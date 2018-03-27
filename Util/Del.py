@@ -15,28 +15,17 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-# Import Flask Packages
-from flask import Flask
-from flask_restful import Api
-from flask_cors import CORS
+import os
+from time import time
 
-# Import Utility Functions and Configurations
-from Util import Config
-
-# Import Controller Modules
-from Controller.Status import Status
-from Controller.Submit import Submit
-
-# Define Flask Application
-app = Flask(__name__)
-CORS(app)
-
-# REST API from Application
-api = Api(app)
-api.add_resource(Status, Config.API_PATH + "/status", endpoint = "status_ep")
-api.add_resource(Submit, Config.API_PATH + "/submit", endpoint = "submit_ep")
-
-# Driver Program
-if __name__ == "__main__":
-    app.run(debug = True, host = Config.API_CONF["host"], port = Config.API_CONF["port"], threaded = True)
-    # ssl_context="adhoc"
+def delete(source_file, binary_file, input_file, output_file, err_file):
+    try:
+        os.remove(source_file)
+        os.remove(binary_file)
+        os.remove(input_file)
+        os.remove(output_file)
+        os.remove(err_file)
+        return 0
+    except OSError as e:
+        print(e)
+        return -1
