@@ -26,6 +26,7 @@ from Util import Config
 # Import Controller Modules
 from Controller.Status import Status
 from Controller.Submit import Submit
+from Controller.Authentication import Authentication
 
 # Define Flask Application
 app = Flask(__name__)
@@ -33,8 +34,26 @@ CORS(app)
 
 # REST API from Application
 api = Api(app)
-api.add_resource(Status, Config.API_PATH + "/status", endpoint = "status_ep")
-api.add_resource(Submit, Config.API_PATH + "/submit", endpoint = "submit_ep")
+api.add_resource(
+    Status,
+    Config.API_PATH + "/status",
+    endpoint = "status_ep")
+api.add_resource(
+    Submit,
+    Config.API_PATH + "/submit",
+    endpoint = "submit_ep")
+api.add_resource(
+    Authentication,
+    Config.API_PATH + "/login",
+    endpoint = "login_ep")
+api.add_resource(
+    Authentication,
+    Config.API_PATH + "/logout",
+    endpoint = "logout_ep")
+api.add_resource(
+    Authentication,
+    Config.API_PATH + "/signup",
+    endpoint = "signup_ep")
 
 # Driver Program
 if __name__ == "__main__":
