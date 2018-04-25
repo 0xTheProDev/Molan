@@ -53,3 +53,18 @@ Module Information:
 11. Submit JavaScript
     Path: /Model/Submit/Submit_JS.py
     Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+12. Database Helper
+    Path: /Model/DB/DatabaseHelper
+    Maintainer: Progyan Bhattacharya <progyanb@acm.org>
+13. Login Model
+    Path: /Model/DB/Login
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+14. Logout Model
+    Path: /Model/DB/Logout
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+15. Signup Model
+    Path: /Model/DB/Signup
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>
+16. Authentication Controller
+    Path: /Controller/Authentication
+    Maintainer: Satyam Kumar <satyamvats5@gmail.com>

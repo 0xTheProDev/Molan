@@ -1,6 +1,6 @@
 # Molan: Molan-API
 #
-# Author: Progyan Bhattacharya <progyanb@acm.org>
+# Author: Satyam Kumar <satyamvats5@gmail.com>
 # Copyright 2018 Tech-Mantra, All rights reserved.
 #
 # This program is free software: you can redistribute it and/or modify
@@ -15,14 +15,22 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-# Configuration for REST API
-API_CONF = {
-    "host": "0.0.0.0",
-    "version": "1.0.0",
-    "port": 3000
-}
-API_PATH = "/api"
-TEST_DATA = {
-    "username": "abc@cba.com",
-    "password": "1234"
-}
+from flask import request
+from flask_restful import Resource
+from Model.DB.Signup import signup
+from Model.DB.Login import login
+from Model.DB.Logout import logout
+
+class Authentication(Resource):
+    def post(self):
+        if request.endpoint == "login_ep":
+            auth = request.authorization
+            return login(auth)
+
+        elif request.endpoint == "logout_ep":
+            data = request.get_json(force = True)
+            return logout(data)
+
+        elif request.endpoint == "signup_ep":
+            data = request.get_json(force = True)
+            return signup(data)

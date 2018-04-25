@@ -1,5 +1,6 @@
 # Storage for source codes and objects
 data/
+db.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

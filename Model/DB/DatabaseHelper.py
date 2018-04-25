@@ -15,14 +15,26 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-# Configuration for REST API
-API_CONF = {
-    "host": "0.0.0.0",
-    "version": "1.0.0",
-    "port": 3000
-}
-API_PATH = "/api"
-TEST_DATA = {
-    "username": "abc@cba.com",
-    "password": "1234"
-}
+import json
+import os.path
+
+class DatabaseHelper(object):
+    def __init__(self):
+        self._hashkey = 0
+        if os.path.isfile("./db.json"):
+            self._connector = open("./db.json", "r+")
+        else:
+            self._connector = open("./db.json", "w+")
+        self._cursor = json.load(self._connector)
+
+    def load(self):
+        return self._cursor
+
+    def save(self, data):
+        if self._cursor != data:
+            self._cursor = data
+            self._hashkey += 1
+
+    def commit(self):
+        if self._hashkey > 0:
+            json.dump(self._cursor, self._connector)
