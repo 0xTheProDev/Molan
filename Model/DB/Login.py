@@ -16,17 +16,30 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
 from Model.DB.DatabaseHelper import DatabaseHelper
+from Util.Config import TEST_DATA
 
 def login(req_data):
+    # Validate data received
     if not all(x in [ "username", "password" ] for x in req_data.keys()):
         res_data = {
                 "loggedIn": False,
-                "error":    "User name and password can't be empty",
+                "error":    "User name and password cannot be empty",
                 "username": None,
                 "cache":    None
         }
         return res_data, 301
 
+    # Backdoor for testing
+    if req_data["username"] == TEST_DATA["username"] and req_data["password"] == TEST_DATA["password"]:
+        res_data = {
+                "loggedIn": True,
+                "error":    None,
+                "username": req_data["username"],
+                "cache":    []
+        }
+        return res_data, 200
+
+    # Load Database
     db = DatabaseHelper()
     data = db.load()
     for user in data :
@@ -40,21 +53,23 @@ def login(req_data):
                         "cache":    user["cache"]
                     }
                 db.save(data)
-                break
+                db.commit()
+                return res_data, 200
+
             else:
-                 res_data = {
+                res_data = {
                          "loggedIn": False,
                          "error":    "Password Not matched",
                          "username": user["username"] ,
                          "cache":    None
                 }
-        else:
-            res_data = {
-                    "loggedIn": False,
-                    "error":    "User not found",
-                    "username": None,
-                    "cache":    None
-            }
+                return res_data, 200
 
-    db.commit()
-    return res_data, 200
+    # Default Action
+    res_data = {
+            "loggedIn": False,
+            "error":    "User not found",
+            "username": None,
+            "cache":    None
+    }
+    return res_data, 301

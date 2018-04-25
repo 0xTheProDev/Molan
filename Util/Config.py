@@ -22,3 +22,7 @@ API_CONF = {
     "port": 3000
 }
 API_PATH = "/api"
+TEST_DATA = {
+    "username": "abc@cba.com",
+    "password": "1234"
+}

@@ -16,24 +16,47 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
 from Model.DB.DatabaseHelper import DatabaseHelper
+from Util.Config import TEST_DATA
 
 def logout(req_data):
+    # Validate data received
+    if not all(x in [ "username" ] for x in req_data.keys()):
+        res_data = {
+                "loggedIn": False,
+                "error":    "User name cannot be empty",
+                "username": None,
+                "cache":    None
+        }
+        return res_data, 301
+
+    # Backdoor for testing
+    if req_data["username"] == TEST_DATA["username"]:
+        res_data = {
+                "loggedIn": False,
+                "error":    None,
+                "username": req_data["username"],
+                "cache":    []
+        }
+        return res_data, 200
+
+    # Load Database
     db = DatabaseHelper()
     data = db.load()
     for user in data:
-        if user["username"] == req_data["username"] :
+        if user["username"] == req_data["username"]:
             user["loggedIn"] = False
             res_data = {
                     "loggedIn": False,
                     "error":    None
             }
             db.save(data)
-            break
-        else :
-            res_data = {
-                    "loggedIn": False ,
-                    "error":    "User Not Found"
-            }
+            db.commit()
+            return res_data, 200
 
-    db.commit()
-    return res_data, 200
+    # Default Action
+    res_data = {
+            "loggedIn": False ,
+            "error":    "User Not Found"
+    }
+
+    return res_data, 301
