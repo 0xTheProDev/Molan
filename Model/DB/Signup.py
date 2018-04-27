@@ -37,7 +37,6 @@ def signup(req_data):
                 "username": req_data["username"],
                 "cache":    []
         }
-        print("Here")
         return res_data, 200
 
     # Load Database
