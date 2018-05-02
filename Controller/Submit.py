@@ -24,6 +24,8 @@ from Model.Submit.Submit_CPP import build as cppb
 from Model.Submit.Submit_PY import build as pb
 from Model.Submit.Submit_JAVA import build as jab
 from Model.Submit.Submit_JS import build as jsb
+from Model.DB.DatabaseHelper import DatabaseHelper
+from time import time
 
 class Submit(Resource):
     def post(self):
@@ -32,6 +34,22 @@ class Submit(Resource):
         req_id = req_data["id"]
         source_code = req_data["source"]
         input_data = req_data["input"] if req_data["haveInput"] else None
+
+        # update cache after each submission
+        if "username" in req_data :
+            timestamp = int(time())
+            db = DatabaseHelper()
+            data = db.load()
+            for user in data :
+                if user["username"] == req_data["username"] :
+                    add_data = {
+                            "timeStamp" : timestamp ,
+                            "language" : req_data["language"] ,
+                            "code" : req_data["source"]
+                    }
+                    user["cache"].append(add_data)
+                    db.save(data)
+                    db.commit()
 
         # Build target for C program
         if req_data["language"] == "c" or req_data["language"] == "C":
