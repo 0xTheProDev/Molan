@@ -22,19 +22,20 @@ class DatabaseHelper(object):
     def __init__(self):
         self._hashkey = 0
         if os.path.isfile("./db.json"):
-            self._connector = open("./db.json", "r+")
+            with open("./db.json", "rb") as db:
+                self._cursor = json.load(db)
         else:
-            self._connector = open("./db.json", "w+")
-        self._cursor = json.load(self._connector)
+            self._cursor = []
+        self._connector = open("./db.json", "w")
 
     def load(self):
         return self._cursor
 
     def save(self, data):
-        if self._cursor != data:
-            self._cursor = data
-            self._hashkey += 1
+        self._cursor = data
+        self._hashkey += 1
 
     def commit(self):
         if self._hashkey > 0:
+            print(self._cursor)
             json.dump(self._cursor, self._connector)
