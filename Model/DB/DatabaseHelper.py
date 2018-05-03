@@ -37,5 +37,4 @@ class DatabaseHelper(object):
 
     def commit(self):
         if self._hashkey > 0:
-            print(self._cursor)
             json.dump(self._cursor, self._connector)

@@ -18,6 +18,9 @@
 from flask_restful import Resource
 from flask import request
 
+# Update Database
+from Model.DB.Cache import updateCache
+
 # Import build recepie
 from Model.Submit.Submit_C import build as cb
 from Model.Submit.Submit_CPP import build as cppb
@@ -32,6 +35,10 @@ class Submit(Resource):
         req_id = req_data["id"]
         source_code = req_data["source"]
         input_data = req_data["input"] if req_data["haveInput"] else None
+
+        # Update cache after each submission
+        if "username" in req_data :
+            updateCache(req_data)
 
         # Build target for C program
         if req_data["language"] == "c" or req_data["language"] == "C":
