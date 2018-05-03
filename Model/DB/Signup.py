@@ -17,6 +17,8 @@
 
 from Model.DB.DatabaseHelper import DatabaseHelper
 from Util.Config import TEST_DATA
+from flask import Flask
+from flask_bcrypt import Bcrypt
 
 def signup(req_data):
     # Validate data received
@@ -52,10 +54,15 @@ def signup(req_data):
             }
             return res_data, 301
 
+    # hash the password
+    app = Flask(__name__)
+    bcrypt = Bcrypt(app)
+    pw_hash = bcrypt.generate_password_hash(req_data["password"])
+
     # New entry to the table
     add_data = {
             "username": req_data["username"],
-            "password": req_data["password"],
+            "password": pw_hash,
             "loggedIn": True,
             "cache":    []
     }
