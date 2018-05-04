@@ -17,8 +17,13 @@
 
 from Model.DB.DatabaseHelper import DatabaseHelper
 from Util.Config import TEST_DATA
+from flask import Flask
+from flask_bcrypt import Bcrypt
 
 def login(req_data):
+    app = Flask(__name__)
+    bcrypt = Bcrypt(app)
+
     # Validate data received
     if not all(x in [ "username", "password" ] for x in req_data.keys()):
         res_data = {
@@ -44,7 +49,8 @@ def login(req_data):
     data = db.load()
     for user in data :
         if user["username"] == req_data["username"] :
-            if user["password"] == req_data["password"]:
+            pw_hash = user["password"]
+            if bcrypt.check_password_hash(pw_hash, req_data["password"]) == True:
                 user["loggedIn"] = True
                 res_data = {
                         "loggedIn": True,
