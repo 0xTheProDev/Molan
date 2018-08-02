@@ -16,9 +16,10 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
 # Import Flask Packages
-from flask import Flask
+from flask import Flask, render_template, send_from_directory
 from flask_restful import Api
 from flask_cors import CORS
+import os
 
 # Import Utility Functions and Configurations
 from Util import Config
@@ -31,6 +32,16 @@ from Controller.Authentication import Authentication
 # Define Flask Application
 app = Flask(__name__)
 CORS(app)
+
+# Editor Module
+@app.route("/vs/<path:filename>")
+def vs(filename):
+    return send_from_directory("static/vs", filename)
+
+# Default Route
+@app.route("/")
+def index():
+    return render_template("index.html")
 
 # REST API from Application
 api = Api(app)
