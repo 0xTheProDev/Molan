@@ -46,7 +46,7 @@ def extension(lang):
 
     # Return source_file, binary_file, input_file, output_file, err_file
     if lang == "java" or lang == "JAVA":
-        return source_file, "{}/{}".format(data_path, "Molan"), input_file, output_file, err_file
+        return source_file, "{}".format(data_path), input_file, output_file, err_file
 
     elif lang == "python" or lang == "Python" or lang == "js" or lang == "javascript" or lang == "Javascript":
         return source_file, input_file, output_file, err_file
