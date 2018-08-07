@@ -3,9 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
-    "react-scripts": "1.1.4"
+    "react-notifications": "^1.4.3",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-promise": "^0.6.0",
+    "secure-ls": "^1.2.1",
+    "semantic-ui-css": "^2.3.3",
+    "semantic-ui-react": "^0.82.2"
   },
   "scripts": {
     "start": "NODE_PATH=src/ react-scripts start",
