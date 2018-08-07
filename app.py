@@ -21,7 +21,7 @@ import sys, getopt
 # Import Flask Packages
 from flask import Flask, render_template, send_from_directory
 from flask_restful import Api
-from flask_cors import CORS
+# from flask_cors import CORS
 
 # Import Utility Functions and Configurations
 from Util import Config
@@ -34,7 +34,6 @@ from Controller.Authentication import Authentication
 
 # Define Flask Application
 app = Flask(__name__)
-CORS(app)
 
 # Editor Module
 @app.route("/vs/<path:filename>")
