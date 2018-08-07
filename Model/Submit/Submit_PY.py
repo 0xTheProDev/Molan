@@ -53,7 +53,7 @@ def build(id, source_code, input_data = None):
 
     # Call subprocess to compile and run
     try:
-        ret_val = subprocess.run(["python", source_file], stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True).returncode
+        ret_val = subprocess.run(["python", source_file], stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True, shell=False).returncode
 
         # Return object initialized to 'None'
         ret_obj = None
