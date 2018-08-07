@@ -52,21 +52,30 @@ def build(id, source_code, input_data = None):
         return { "id": id, "error": "Error occured while creating file" }, 403
 
     # Call subprocess to compile and run
-    ret_val =  subprocess.call(["python", source_file], stdin = fin, stdout = fout, stderr = ferr)
+    try:
+        ret_val = subprocess.run(["python", source_file], stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True).returncode
 
-    # Return object initialized to 'None'
-    ret_obj = None
+        # Return object initialized to 'None'
+        ret_obj = None
 
-    # Compilation Success
-    if ret_val == 0:
-        fout.seek(0)
-        ret_obj = { "id": id, "status": "Success", "input": input_data, "output": fout.read() }
+        # Compilation Success
+        if ret_val == 0:
+            fout.seek(0)
+            ret_obj = { "id": id, "status": "Success", "input": input_data, "output": fout.read() }
 
-    # Compilation Failed
-    else:
-        ferr.seek(0)
-        err = ferr.read().replace(source_file, "prog.py")
-        ret_obj = { "id": id, "status": "Compile Error", "input": input_data, "output": err }
+        # Compilation Failed
+        else:
+            ferr.seek(0)
+            err = ferr.read().replace(source_file, "prog.py")
+            ret_obj = { "id": id, "status": "Compile Error", "input": input_data, "output": err }
+
+    # Process killed due to Timeout
+    except subprocess.TimeoutExpired:
+        ret_obj = { "id": id, "status": "Time Limit Exceeded", "input": input_data }
+    
+    # Non-zero Exit Code
+    except subprocess.CalledProcessError:
+        ret_obj = { "id": id, "status": "Runtime Error: NZEC", "input": input_data }
 
     # Close file connections
     if (fin != None):
@@ -77,7 +86,7 @@ def build(id, source_code, input_data = None):
         ferr.close()
 
     # Delete all files during production
-    if delete(source_file, binary_file, input_file if fin else None, output_file, err_file) == -1:
+    if delete(source_file, None, input_file if fin else None, output_file, err_file) == -1:
         print("Error occured while deleting files")
 
     # Return result

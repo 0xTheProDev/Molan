@@ -59,18 +59,27 @@ def build(id, source_code, input_data = None):
 
     # Compilation Success
     if ret_val == 0:
-        exe_val = subprocess.call(["java", "-cp", binary_file, "Molan"] , stdin = fin, stdout = fout, stderr = ferr)
+        try:
+            exe_val = subprocess.run(["java", "-cp", binary_file, "Molan"] , stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True).returncode
 
-        # Returned Success
-        if exe_val == 0:
-            fout.seek(0)
-            ret_obj = { "id": id, "status": "Success", "input": input_data, "output": fout.read() }
+            # Returned Success
+            if exe_val == 0:
+                fout.seek(0)
+                ret_obj = { "id": id, "status": "Success", "input": input_data, "output": fout.read() }
 
-        # Execution Failed
-        else:
-            ferr.seek(0)
-            err = ferr.read().replace(source_file, "prog.java")
-            ret_obj = { "id": id, "status": "Runtime Error", "input": input_data, "output": err }
+            # Execution Failed
+            else:
+                ferr.seek(0)
+                err = ferr.read().replace(source_file, "prog.java")
+                ret_obj = { "id": id, "status": "Runtime Error", "input": input_data, "output": err }
+        
+        # Process killed due to Timeout
+        except subprocess.TimeoutExpired:
+            ret_obj = { "id": id, "status": "Time Limit Exceeded", "input": input_data }
+        
+        # Non-zero Exit Code
+        except subprocess.CalledProcessError:
+            ret_obj = { "id": id, "status": "Runtime Error: NZEC", "input": input_data }
 
     # Compilation Failed
     else:
