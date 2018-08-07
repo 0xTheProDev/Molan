@@ -1,0 +1,15 @@
+@media(min-width: 600px) {
+    .copyright {
+        float: left;
+    }
+    .footer-cols {
+        float: right;
+        width: 40%;
+    }
+}
+
+@media(max-width: 600px) {
+    .footer-cols {
+        display: none;
+    }
+}

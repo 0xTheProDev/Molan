@@ -1,19 +1,35 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import { Grid, Segment } from "semantic-ui-react";
+import "./App.css";
+import FooterComponent from "component/FooterComponent";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+export default class AppContainer extends Component {
+    render() {
+        return (
+            <div className="main-page">
+              <header className="header">
+                Text
+              </header>
+              <main className="container">
+                <Grid container centered columns={2}>
+                  <Grid.Column>
+                    <section className="editor-section">
+                      <Segment raised>
+                        Text
+                      </Segment>
+                    </section>
+                    <section className="result-section">
+                      <Segment piled>
+                        Text
+                      </Segment>
+                    </section>
+                  </Grid.Column>
+                </Grid>
+              </main>
+              <footer className="footer">
+                <FooterComponent/>
+              </footer>
+            </div>
+        );
+    }
 }
-
-export default App;
