@@ -1,5 +1,4 @@
-# Storage for source codes and objects
-data/
+# Storage for database object
 db.json
 
 # Byte-compiled / optimized / DLL files
