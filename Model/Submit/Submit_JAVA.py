@@ -87,8 +87,8 @@ def build(id, source_code, input_data = None):
         ferr.close()
 
     # Delete all files during production
-    # if delete(source_file, binary_file, input_file, output_file, err_file) == -1:
-    #    return {"id": id, "error": "Error occured while deleting files"}
+    if delete(source_file, binary_file, input_file if fin else None, output_file, err_file) == -1:
+        print("Error occured while deleting files")
 
     # Return result
     return ret_obj, 200
