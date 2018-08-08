@@ -60,7 +60,7 @@ def build(id, source_code, input_data = None):
     # Compilation Success
     if ret_val == 0:
         try:
-            exe_val = subprocess.run(["java", "-cp", binary_file, "Molan"] , stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True, shell=False).returncode
+            exe_val = subprocess.run(["java", "-cp", binary_file, "Molan"] , stdin = fin, stdout = fout, stderr = ferr, timeout=4, check=True, shell=False).returncode
 
             # Returned Success
             if exe_val == 0:

@@ -61,7 +61,8 @@ def build(id, source_code, input_data = None):
     # Compilation Success
     if ret_val == 0:
         try:
-            exe_val = subprocess.run([binary_file], stdin = fin, stdout = fout, stderr = ferr, timeout=3, check=True, shell=False).returncode
+            sub = subprocess.run([binary_file], cwd="data", stdin = fin, stdout = fout, stderr = ferr, timeout=2, check=True, shell=False)
+            exe_val = sub.returncode
 
             # Returned Success
             if exe_val == 0:
