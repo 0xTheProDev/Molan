@@ -1,3 +1,8 @@
+.footer-content {
+    background: #fff !important;
+    height: 60px !important;
+}
+
 @media(min-width: 600px) {
     .copyright {
         float: left;

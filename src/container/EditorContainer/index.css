@@ -1,0 +1,10 @@
+.editor-col {
+    border: 1px solid rgba(34,36,38,.15) !important;
+    margin: 0 10px !important;
+    padding: 0 !important;
+    border-radius: 10px !important;
+}
+
+.editor-col:active, .editor-col:focus {
+    border-color: #85b7d9 !important;
+}
