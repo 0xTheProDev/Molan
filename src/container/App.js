@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
 import HeaderComponent from 'component/HeaderComponent';
-import FooterComponent from "component/FooterComponent";
 import EditorContainer from 'container/EditorContainer';
+import ResultContainer from "component/ResultContainer";
+import FooterComponent from "component/FooterComponent";
 
 export default class AppContainer extends Component {
     render() {
@@ -22,7 +23,7 @@ export default class AppContainer extends Component {
                     </section>
                     <section className="result-section">
                       <Segment piled>
-                        Text
+                        <ResultContainer/>
                       </Segment>
                     </section>
                   </Grid.Column>
