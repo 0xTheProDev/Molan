@@ -77,6 +77,8 @@ export default class EditorContainer extends Component {
     };
 
     onReset = () => {
+        console.log('here');
+        
         remove('molan');
         this.code = Array.from(template);
         const item = this.code.find(e => e.lang === this.state.lang);
@@ -112,7 +114,9 @@ export default class EditorContainer extends Component {
                           onChangeLineNum={this.onChangeLineNum}
                           onChangeTheme={this.onChangeTheme}
                         />
-                        <ButtonGroup/>
+                        <ButtonGroup
+                          onReload={this.onReset}
+                        />
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row centered>

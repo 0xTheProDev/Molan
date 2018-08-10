@@ -1,5 +1,6 @@
 const c_template =
 `#include <stdio.h>
+
 int main(void) {
     /* Your Code Here */
     return 0;
