@@ -4,7 +4,29 @@ import { Button, Icon } from 'semantic-ui-react';
 
 export default class ButtonGroup extends Component {
     static propTypes = {
+        lang:     PropTypes.string.isRequired,
+        code:     PropTypes.string.isRequired,
+        onChange: PropTypes.func.isRequired,
         onReload: PropTypes.func.isRequired
+    };
+
+    constructor(props) {
+        super(props);
+        this.fileBtn = null;
+    }
+
+    onFileBtnClick = () => {
+        this.fileBtn.click();
+    };
+
+    onFileBtnChange = (e) => {
+        // if (e.target.files.length === 1) return false;
+        const { onChange } = this.props;
+        const fileReader = new FileReader();
+        fileReader.onload = function(f) {
+            onChange(f.target.result);
+        }
+        fileReader.readAsText(e.target.files[0], 'utf-8');
     };
 
     render() {
@@ -24,11 +46,18 @@ export default class ButtonGroup extends Component {
                         <Icon name='redo'/>
                     </Button.Content>
                 </Button>
-                <Button animated='vertical' floated='right'>
+                <Button animated='vertical' floated='right' onClick={this.onFileBtnClick}>
                     <Button.Content hidden>Upload</Button.Content>
                     <Button.Content visible>
                         <Icon name='upload'/>
                     </Button.Content>
+                    <input
+                      type='file'
+                      accepts=".c,.cpp,.java,.js,.py"
+                      style={{ display: 'none' }}
+                      ref={input => this.fileBtn = input}
+                      onChange={this.onFileBtnChange}
+                    />
                 </Button>
             </div>
         );

@@ -118,6 +118,9 @@ export default class EditorContainer extends Component {
                           onChangeTheme={this.onChangeTheme}
                         />
                         <ButtonGroup
+                          lang={this.state.lang}
+                          code={this.state.code}
+                          onChange={this.onEditorChange}
                           onReload={this.onReset}
                         />
                     </Grid.Column>
