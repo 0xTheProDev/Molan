@@ -26,7 +26,7 @@ export default class ResultComponent extends Component {
                         <Form>
                             <label htmlFor='custom_output'>Custom Output:</label>
                             <TextArea
-                              disabled
+                              readOnly
                               autoHeight
                               placeholder='No Output to show'
                               id='custom_output'

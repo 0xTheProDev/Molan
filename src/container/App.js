@@ -3,7 +3,7 @@ import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
 import HeaderComponent from 'component/HeaderComponent';
 import EditorContainer from 'container/EditorContainer';
-import ResultContainer from "component/ResultContainer";
+import ResultComponent from "component/ResultComponent";
 import FooterComponent from "component/FooterComponent";
 
 export default class AppContainer extends Component {
@@ -23,7 +23,7 @@ export default class AppContainer extends Component {
                     </section>
                     <section className="result-section">
                       <Segment piled>
-                        <ResultContainer/>
+                        <ResultComponent/>
                       </Segment>
                     </section>
                   </Grid.Column>
