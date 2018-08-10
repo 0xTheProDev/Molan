@@ -3,6 +3,8 @@ import { Grid, Checkbox, Button, Form, TextArea } from 'semantic-ui-react';
 import MonacoEditor from 'react-monaco-editor';
 import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
+import ButtonGroup from 'component/ButtonGroup';
+import SettingsDropdown from 'component/SettingsDropdown';
 
 const requireConfig = {
     url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
@@ -18,7 +20,12 @@ export default class EditorContainer extends Component {
             lang: 'c',
             code: '',
             custom: false,
-            input: ''
+            input: '',
+            theme: 'vs-light',
+            options: {
+                lineNumbers: true,
+                rulers: false
+            }
         };
     }
 
@@ -38,6 +45,17 @@ export default class EditorContainer extends Component {
         this.setState(Object.assign({}, this.state, { input: d.value }));
     };
 
+    onChangeLineNum = () => {
+        const options = Object.assign({}, this.state.options);
+        options.lineNumbers = ! options.lineNumbers;
+        this.setState(Object.assign({}, this.state, { options: options }));
+    };
+
+    onChangeTheme = () => {
+        const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
+        this.setState(Object.assign({}, this.state, { theme: theme }));
+    };
+
     render() {
         return (
             <Grid>
@@ -50,7 +68,13 @@ export default class EditorContainer extends Component {
                     </Grid.Column>
                     <Grid.Column>{''}</Grid.Column>
                     <Grid.Column>
-                        Buttons
+                        <SettingsDropdown
+                          defaultChecked={this.state.options.lineNumbers}
+                          darkThemed={this.state.theme === 'vs-dark'}
+                          onChangeLineNum={this.onChangeLineNum}
+                          onChangeTheme={this.onChangeTheme}
+                        />
+                        <ButtonGroup/>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row centered>
@@ -58,9 +82,11 @@ export default class EditorContainer extends Component {
                         <MonacoEditor
                           height='300'
                           width='100%'
+                          theme={this.state.theme}
                           language={this.state.lang}
                           value={this.state.code}
                           onChange={this.onEditorChange}
+                          options={this.state.options}
                           requireConfig={requireConfig}
                         />
                     </Grid.Column>
