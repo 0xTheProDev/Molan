@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import { Grid, Checkbox, Button, Form, TextArea } from 'semantic-ui-react';
+import { Grid, Checkbox, Form, TextArea } from 'semantic-ui-react';
 import MonacoEditor from 'react-monaco-editor';
 import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
 import ButtonGroup from 'component/ButtonGroup';
 import SettingsDropdown from 'component/SettingsDropdown';
+import SubmitButton from 'component/SubmitButton';
 import template from 'util/template';
 import { get, set, remove } from 'util/store';
 
 const requireConfig = {
     url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
     paths: {
-        'vs': 'https://www.mycdn.com/monaco-editor/0.6.1/min/vs'
+        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.14.0/min/vs/'
     }
 };
 
@@ -43,7 +44,7 @@ export default class EditorContainer extends Component {
         this.setState(Object.assign({}, this.state, { lang: 'c', code: item ? item.code : '' }));
     }
 
-    onLangChange = (_,d) => {
+    updateCache = () => {
         const { code, lang } = this.state;
         if (code.length !== 0) {
             const item = this.code.find(e => e.lang === lang);
@@ -54,6 +55,10 @@ export default class EditorContainer extends Component {
             }
         }
         set('molan', this.code);
+    };
+
+    onLangChange = (_,d) => {
+        this.updateCache();
         let temp;
         const item = this.code.find(e => e.lang === d.value);
         if (typeof item === 'undefined' || item === null) {
@@ -77,8 +82,6 @@ export default class EditorContainer extends Component {
     };
 
     onReset = () => {
-        console.log('here');
-        
         remove('molan');
         this.code = Array.from(template);
         const item = this.code.find(e => e.lang === this.state.lang);
@@ -141,12 +144,7 @@ export default class EditorContainer extends Component {
                         />
                     </Grid.Column>
                     <Grid.Column>
-                        <Button
-                          type='button'
-                          size='large'
-                          floated='right'
-                          color='green'
-                        >Submit</Button>
+                        <SubmitButton onCallback={this.updateCache}/>
                     </Grid.Column>
                 </Grid.Row>
                 {
