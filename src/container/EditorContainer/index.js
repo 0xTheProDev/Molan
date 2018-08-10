@@ -5,6 +5,8 @@ import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
 import ButtonGroup from 'component/ButtonGroup';
 import SettingsDropdown from 'component/SettingsDropdown';
+import template from 'util/template';
+import { get, set, remove } from 'util/store';
 
 const requireConfig = {
     url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
@@ -17,7 +19,7 @@ export default class EditorContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            lang: 'c',
+            lang: '',
             code: '',
             custom: false,
             input: '',
@@ -27,10 +29,39 @@ export default class EditorContainer extends Component {
                 rulers: false
             }
         };
+        this.code = [];
+    }
+
+    componentDidMount() {
+        const temp = get('molan');
+        if (Array.isArray(temp)) {
+            this.code = Array.from(temp);
+        } else {
+            this.code = Array.from(template);
+        }
+        const item = this.code.find(e => e.lang === 'c');
+        this.setState(Object.assign({}, this.state, { lang: 'c', code: item ? item.code : '' }));
     }
 
     onLangChange = (_,d) => {
-        this.setState(Object.assign({}, this.state, { lang: d.value }));
+        const { code, lang } = this.state;
+        if (code.length !== 0) {
+            const item = this.code.find(e => e.lang === lang);
+            if (typeof item === 'undefined' || item === null) {
+                this.code.push({ lang, code });
+            } else {
+                item.code = code;
+            }
+        }
+        set('molan', this.code);
+        let temp;
+        const item = this.code.find(e => e.lang === d.value);
+        if (typeof item === 'undefined' || item === null) {
+            temp = template.find(e => e.lang === d.value).code;
+        } else {
+            temp = item.code;
+        }
+        this.setState(Object.assign({}, this.state, { lang: d.value, code: temp }));
     };
 
     onEditorChange = (d) => {
@@ -43,6 +74,13 @@ export default class EditorContainer extends Component {
 
     onInputChange = (_,d) => {
         this.setState(Object.assign({}, this.state, { input: d.value }));
+    };
+
+    onReset = () => {
+        remove('molan');
+        this.code = Array.from(template);
+        const item = this.code.find(e => e.lang === this.state.lang);
+        this.setState(Object.assign({}, this.state, { code: item ? item.code : '' }));
     };
 
     onChangeLineNum = () => {

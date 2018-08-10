@@ -22,7 +22,7 @@ axios.defaults.xsrfHeaderName = "X-CSRFToken";
 
 
 /**
- * Globa; State Configuration
+ * Global State Configuration
  */
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 const store = createStoreWithMiddleware(reducer);
