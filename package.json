@@ -13,6 +13,7 @@
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-promise": "^0.6.0",
+    "save-as": "^0.1.8",
     "secure-ls": "^1.2.1",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.2"

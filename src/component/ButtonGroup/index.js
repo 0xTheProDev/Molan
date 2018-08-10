@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Icon } from 'semantic-ui-react';
+import saveAs from 'save-as';
+import template from 'util/template';
 
 export default class ButtonGroup extends Component {
     static propTypes = {
@@ -20,7 +22,6 @@ export default class ButtonGroup extends Component {
     };
 
     onFileBtnChange = (e) => {
-        // if (e.target.files.length === 1) return false;
         const { onChange } = this.props;
         const fileReader = new FileReader();
         fileReader.onload = function(f) {
@@ -29,12 +30,19 @@ export default class ButtonGroup extends Component {
         fileReader.readAsText(e.target.files[0], 'utf-8');
     };
 
+    onSaveBtnClick = () => {
+        const { lang, code } = this.props;
+        const blob = new Blob([ code ], { type: 'text/plain;charset=ascii' });
+        const item = template.find(e => e.lang === lang);
+        saveAs(blob, `molan${item ? item.ext : '.txt'}`);
+    };
+
     render() {
         const { onReload } = this.props;
 
         return (
             <div>
-                <Button animated='fade' floated='right'>
+                <Button animated='fade' floated='right' onClick={this.onSaveBtnClick}>
                     <Button.Content hidden>Save</Button.Content>
                     <Button.Content visible>
                         <Icon name='save'/>
