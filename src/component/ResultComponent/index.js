@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Form, TextArea } from 'semantic-ui-react';
+import LoaderComponent from 'component/LoaderComponent';
 
 export default class ResultComponent extends Component {
+    static propTypes = {
+        submit:   PropTypes.bool.isRequired,
+        onSubmit: PropTypes.func.isRequired
+    };
+
     render() {
+        const { submit } = this.props;
+
+        if (submit === true) {
+            return (<LoaderComponent/>);
+        }
+
         return (
             <Grid>
                 <Grid.Row>

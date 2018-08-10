@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Grid, Checkbox, Form, TextArea } from 'semantic-ui-react';
 import MonacoEditor from 'react-monaco-editor';
 import './index.css';
@@ -17,6 +18,10 @@ const requireConfig = {
 };
 
 export default class EditorContainer extends Component {
+    static propTypes = {
+        onSubmit: PropTypes.func.isRequired
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -100,26 +105,27 @@ export default class EditorContainer extends Component {
     };
 
     render() {
+        const { lang, code, custom, input, theme, options } = this.state;
         return (
             <Grid>
                 <Grid.Row columns={3}>
                     <Grid.Column stretched>
                         <DropdownSelection
-                          defaultLang={this.state.lang}
+                          defaultLang={lang}
                           onChange={this.onLangChange}
                         />
                     </Grid.Column>
                     <Grid.Column>{''}</Grid.Column>
                     <Grid.Column>
                         <SettingsDropdown
-                          defaultChecked={this.state.options.lineNumbers}
-                          darkThemed={this.state.theme === 'vs-dark'}
+                          defaultChecked={options.lineNumbers}
+                          darkThemed={theme === 'vs-dark'}
                           onChangeLineNum={this.onChangeLineNum}
                           onChangeTheme={this.onChangeTheme}
                         />
                         <ButtonGroup
-                          lang={this.state.lang}
-                          code={this.state.code}
+                          lang={lang}
+                          code={code}
                           onChange={this.onEditorChange}
                           onReload={this.onReset}
                         />
@@ -130,11 +136,11 @@ export default class EditorContainer extends Component {
                         <MonacoEditor
                           height='300'
                           width='100%'
-                          theme={this.state.theme}
-                          language={this.state.lang}
-                          value={this.state.code}
+                          theme={theme}
+                          language={lang}
+                          value={code}
                           onChange={this.onEditorChange}
-                          options={this.state.options}
+                          options={options}
                           requireConfig={requireConfig}
                         />
                     </Grid.Column>
@@ -143,11 +149,18 @@ export default class EditorContainer extends Component {
                     <Grid.Column>
                         <Checkbox
                           label="Custom Input"
+                          checked={custom}
                           onChange={this.onChecked}
                         />
                     </Grid.Column>
                     <Grid.Column>
-                        <SubmitButton onCallback={this.updateCache}/>
+                        <SubmitButton
+                          lang={lang}
+                          code={code}
+                          checked={custom}
+                          input={input}
+                          onCallback={() => { this.updateCache(); this.props.onSubmit(true); }}
+                        />
                     </Grid.Column>
                 </Grid.Row>
                 {
