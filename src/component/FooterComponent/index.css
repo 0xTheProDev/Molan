@@ -1,6 +1,13 @@
 .header-content, .footer-content {
-    background: #fff !important;
     height: 60px !important;
+}
+
+.header-content {
+    background-color: #FFF !important;
+}
+
+.footer-content {
+    background-color: #FFF8DC !important;
 }
 
 @media(min-width: 600px) {
