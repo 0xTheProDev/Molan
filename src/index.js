@@ -25,7 +25,9 @@ axios.defaults.xsrfHeaderName = "X-CSRFToken";
  * Global State Configuration
  */
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
-const store = createStoreWithMiddleware(reducer);
+const store = createStoreWithMiddleware(
+    reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 
 /**
