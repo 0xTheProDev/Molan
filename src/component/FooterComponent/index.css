@@ -1,12 +1,5 @@
-.header-content, .footer-content {
-    height: 60px !important;
-}
-
-.header-content {
-    background-color: #FFF !important;
-}
-
 .footer-content {
+    height: 60px !important;
     background-color: #FFF8DC !important;
 }
 

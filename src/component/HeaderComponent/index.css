@@ -1,0 +1,12 @@
+.header-content {
+    background-color: #FFF !important;
+    height: 65px !important;
+}
+
+.brand {
+    padding-left: 40px !important;
+    margin-top: -20px !important;
+    user-select: none !important;
+    pointer-events: none !important;
+    -webkit-user-drag: none !important;
+}
