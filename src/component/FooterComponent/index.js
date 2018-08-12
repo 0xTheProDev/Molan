@@ -15,7 +15,8 @@ export class FooterComponent extends Component {
         super(props);
         this.state = {
             icon:  'question',
-            color: 'yellow'
+            color: 'yellow',
+            label: 'Loading'
         };
     }
 
@@ -26,19 +27,21 @@ export class FooterComponent extends Component {
     componentWillReceiveProps(props) {
         if (props.service.hasOwnProperty('status')) {
             if (props.service.status === true) {
-                this.setState({ icon: 'check', color: 'green' });
+                this.setState({ icon: 'check', color: 'green', label: 'Ok' });
             } else {
-                this.setState({ icon: 'close', color: 'red' });
+                this.setState({ icon: 'close', color: 'red', label: 'Failed' });
             }
         }
     }
 
     onReload = () => {
         this.props.getStatus();
-        this.setState({ icon: 'question', color: 'yellow' });
+        this.setState({ icon: 'question', color: 'yellow', label: 'Loading' });
     };
 
     render() {
+        const { icon, color, label } = this.state;
+
         return (
             <div className="footer-content">
                 <div className="copyright">
@@ -50,11 +53,14 @@ export class FooterComponent extends Component {
                     <Grid columns={1} centered relaxed>
                         <Grid.Column>
                             <Segment basic textAlign='center'>
-                                <Icon
-                                  name={this.state.icon}
-                                  color={this.state.color}
-                                  onClick={this.onReload}
-                                /> Service Status
+                                <div className='service-status' onClick={this.onReload}>
+                                    <Icon
+                                      name={icon}
+                                      color={color}
+                                      aria-label={label}
+                                      aria-hidden={label}
+                                    /> Service Status
+                                </div>
                             </Segment>
                         </Grid.Column>
                     </Grid>
