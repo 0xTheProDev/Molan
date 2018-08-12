@@ -19,11 +19,15 @@ export default class SettingsDropdown extends Component {
                   position='bottom center'
                 >
                     <Header as='h5'>Settings</Header>
-                    <Checkbox
-                        label="Show Line Numbers"
-                        checked={this.props.defaultChecked}
-                        onChange={this.props.onChangeLineNum}
-                    />
+                    {
+                        /*
+                        <Checkbox
+                            label="Show Line Numbers"
+                            checked={this.props.defaultChecked}
+                            onChange={this.props.onChangeLineNum}
+                        />
+                        */
+                    }
                     <Checkbox
                         label="Night Mode"
                         checked={this.props.darkThemed}

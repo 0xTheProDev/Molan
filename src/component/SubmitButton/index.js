@@ -18,7 +18,7 @@ export class SubmitButton extends Component {
 
     onClick = () => {
         const { lang, code, checked, input, service, onCallback, submit } = this.props;
-        if (service.hasOwnProperty('status') && service.status === true) {
+        if (navigator.onLine && service.hasOwnProperty('status') && service.status === true) {
             const formData = {
                 id:        Date.now(),
                 language:  lang,
