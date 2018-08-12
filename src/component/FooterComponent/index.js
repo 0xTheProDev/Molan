@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getStatus } from 'action/utilAction';
 import { Grid, Segment, Icon } from "semantic-ui-react";
+import { NotificationManager } from 'react-notifications';
 import "./index.css";
 
 export class FooterComponent extends Component {
@@ -21,7 +22,9 @@ export class FooterComponent extends Component {
     }
 
     componentWillMount() {
-        this.props.getStatus();
+        window.addEventListener('online', () => this.checkStatus());
+        window.addEventListener('offline', () => this.checkStatus());
+        this.checkStatus();
     }
 
     componentWillReceiveProps(props) {
@@ -34,8 +37,16 @@ export class FooterComponent extends Component {
         }
     }
 
+    checkStatus = () => {
+        if (navigator.onLine) {
+            this.props.getStatus();
+        } else {
+            NotificationManager.warning('Check your internet connection', 'Network Unavailable');
+        }
+    };
+
     onReload = () => {
-        this.props.getStatus();
+        this.checkStatus();
         this.setState({ icon: 'question', color: 'yellow', label: 'Loading' });
     };
 
