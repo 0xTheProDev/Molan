@@ -34,17 +34,13 @@ from Controller.Authentication import Authentication
 
 # Define Flask Application
 app = Flask(__name__)
+# CORS(app)
 
-# Editor Module
-@app.route("/vs/<path:filename>")
-def vs(filename):
-    return send_from_directory("static/vs", filename)
 
 # Default Route
 @app.route("/")
 def index():
     return render_template("index.html")
-
 
 
 # REST API from Application

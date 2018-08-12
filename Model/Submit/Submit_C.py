@@ -81,7 +81,7 @@ def build(id, source_code, input_data = None):
         
         # Non-zero Exit Code
         except subprocess.CalledProcessError:
-            ret_obj = { "id": id, "status": "Runtime Error: NZEC", "input": input_data }
+            ret_obj = { "id": id, "status": "Runtime Error", "input": input_data }
 
     # Compilation Failed
     else:
