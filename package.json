@@ -16,7 +16,8 @@
     "save-as": "^0.1.8",
     "secure-ls": "^1.2.1",
     "semantic-ui-css": "^2.3.3",
-    "semantic-ui-react": "^0.82.2"
+    "semantic-ui-react": "^0.82.2",
+    "source-map-support": "^0.5.6"
   },
   "scripts": {
     "start": "NODE_PATH=src/ react-scripts start",
