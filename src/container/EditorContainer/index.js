@@ -137,7 +137,7 @@ export default class EditorContainer extends Component {
                           height='300'
                           width='100%'
                           theme={theme}
-                          language={lang}
+                          language={lang === 'python3' ? 'python' : lang}
                           value={code}
                           onChange={this.onEditorChange}
                           options={options}
