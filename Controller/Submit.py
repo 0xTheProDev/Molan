@@ -26,7 +26,7 @@ from Model.Submit.Submit_C import build as cb
 from Model.Submit.Submit_CPP import build as cppb
 from Model.Submit.Submit_PY import build as pb
 from Model.Submit.Submit_JAVA import build as jab
-from Model.Submit.Submit_JS import build as jsb
+# from Model.Submit.Submit_JS import build as jsb
 
 class Submit(Resource):
     def post(self):
@@ -54,8 +54,11 @@ class Submit(Resource):
 
         # Build target for Python program
         elif req_data["language"] == "python" or req_data["language"] == "Python":
-            return pb(req_id, source_code, input_data)
+            return pb(req_id, source_code, input_data, "2")
+        
+        elif req_data["language"] == "python3" or req_data["language"] == "Python3":
+            return pb(req_id, source_code, input_data, "3")
 
         # Build target for JavaScript program
-        elif req_data["language"] == "js" or req_data["language"] == "javascript" or req_data["language"] == "Javascript":
-            return jsb(req_id, source_code, input_data)
+        #elif req_data["language"] == "js" or req_data["language"] == "javascript" or req_data["language"] == "Javascript":
+        #    return jsb(req_id, source_code, input_data)

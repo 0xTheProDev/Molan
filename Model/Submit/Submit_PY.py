@@ -19,7 +19,10 @@ import subprocess
 from Util.Extension import extension
 from Util.Del import delete
 
-def build(id, source_code, input_data = None):
+def build(id, source_code, input_data = None, version = "2"):
+    if version != "2" and version != "3":
+        return { "id": id, "error": "Submission Failed" }, 400
+
     # Get file names from utility method
     source_file, input_file, output_file, err_file = extension("python")
 
@@ -53,7 +56,8 @@ def build(id, source_code, input_data = None):
 
     # Call subprocess to compile and run
     try:
-        ret_val = subprocess.run(["python", source_file], stdin = fin, stdout = fout, stderr = ferr, timeout=10, check=True, shell=False).returncode
+        prog = "python2" if version == "2" else "python3"
+        ret_val = subprocess.run([prog, source_file], stdin = fin, stdout = fout, stderr = ferr, timeout=10, check=True, shell=False).returncode
 
         # Return object initialized to 'None'
         ret_obj = None
