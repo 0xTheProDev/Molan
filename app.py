@@ -19,7 +19,7 @@
 import sys, getopt
 
 # Import Flask Packages
-from flask import Flask, render_template
+from flask import Flask, request, render_template
 from flask_restful import Api
 # from flask_cors import CORS
 from flask_limiter import Limiter
@@ -43,13 +43,8 @@ app = Flask(__name__)
 limiter = Limiter(
     app,
     key_func = get_remote_address,
-    default_limits = ["200 per day", "50 per hour"]
+    default_limits = ["200 per day", "30 per hour"]
 )
-
-@limiter.request_filter
-def header_whitelist():
-    # Exempt Localhost Request
-    return request.headers.get("X-Internal", "") == "true"
 
 
 # Default Route
@@ -84,8 +79,8 @@ api.add_resource(
 
 
 # Environment Variables
-hostEnv = Config.API_CONF["host"]
-portEnv = Config.API_CONF["port"]
+hostEnv   = Config.API_CONF["host"]
+portEnv   = Config.API_CONF["port"]
 debugFlag = False
 
 # Driver Program
@@ -101,15 +96,28 @@ if __name__ == "__main__":
             arguments, values = getopt.getopt(argList, unixOpt, gnuOpt)
             for arg, value in arguments:
                 if arg in ("-h", "--host"):
-                    hostEnv = value.__str__()
+                    try:
+                        hostEnv = value.__str__()
+                    except Exception:
+                        print("Error: Invaid host address provided with command line argument")
+                        sys.exit(1)
+                
                 elif arg in ("-p", "--port"):
-                    portEnv = int(value)
+                    try:
+                        portEnv = int(value)
+                    except Exception:
+                        print("Error: Invaid port number provided with command line argument")
+                        sys.exit(1)
+                
                 elif arg in ("-d", "--debug"):
                     debugFlag = True
 
         except getopt.error as err:
             print(err.__str__())
             sys.exit(2)
-
-    app.run(debug = True, host = hostEnv, port = portEnv, threaded = True)
-    # ssl_context="adhoc"
+    try:
+        app.run(debug = debugFlag, host = hostEnv, port = portEnv, threaded = True)
+        # ssl_context="adhoc"
+    except Exception as e:
+        print("Failed to start application:", e)
+        sys.exit(3)
