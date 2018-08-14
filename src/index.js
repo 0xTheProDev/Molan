@@ -34,12 +34,12 @@ const store = createStoreWithMiddleware(
  * DOM Injection
  */
 ReactDOM.render(
-    <Provider store={store}>
-        <main id="app_container">
-            <NotificationContainer/>
+    <main id="app_container">
+        <NotificationContainer/>
+        <Provider store={store}>
             <App/>
-        </main>
-    </Provider>
+        </Provider>
+    </main>
 ,document.getElementById("root"));
 
 registerServiceWorker();
