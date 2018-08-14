@@ -22,6 +22,8 @@ import sys, getopt
 from flask import Flask, render_template
 from flask_restful import Api
 # from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 
 # Import Utility Functions and Configurations
 from Util import Config
@@ -35,6 +37,19 @@ from Controller.Submit import Submit
 # Define Flask Application
 app = Flask(__name__)
 # CORS(app)
+
+
+# Limiter Configuration
+limiter = Limiter(
+    app,
+    key_func = get_remote_address,
+    default_limits = ["200 per day", "50 per hour"]
+)
+
+@limiter.request_filter
+def header_whitelist():
+    # Exempt Localhost Request
+    return request.headers.get("X-Internal", "") == "true"
 
 
 # Default Route
