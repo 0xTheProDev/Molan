@@ -15,13 +15,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-# Import System Modules
+# Import System and Util Modules
 import sys, getopt
+import uuid
 
 # Import Flask Packages
-from flask import Flask, request, render_template
+from flask import Flask, request, make_response, render_template
 from flask_restful import Api
-# from flask_cors import CORS
+from flask_wtf.csrf import CSRFProtect, generate_csrf
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 
@@ -36,10 +37,16 @@ from Controller.Submit import Submit
 
 # Define Flask Application
 app = Flask(__name__)
-# CORS(app)
 
+app.config["SECRET_KEY"]            = uuid.uuid4().__str__()
+app.config["WTF_CSRF_HEADERS"]      = [ "X-CSRFToken" ]
+app.config["WTF_CSRF_TIME_LIMIT"]   = 3600
+app.config["SESSION_COOKIE_NAME"]   = "_auth_session"
+app.config["SESSION_PERMANENT"]     = False
 
-# Limiter Configuration
+csrf = CSRFProtect(app)
+app.jinja_env.globals['csrf_token'] = generate_csrf
+
 limiter = Limiter(
     app,
     key_func = get_remote_address,
@@ -50,7 +57,9 @@ limiter = Limiter(
 # Default Route
 @app.route("/")
 def index():
-    return render_template("index.html")
+    resp = make_response(render_template("index.html"))
+    resp.headers.set("Access-Control-Allow-Origin", request.host)
+    return resp
 
 
 # REST API from Application

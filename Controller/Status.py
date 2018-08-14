@@ -20,6 +20,6 @@ from flask_restful import Resource
 
 # Define Controller
 class Status(Resource):
-    def get(self):
+    def post(self):
         # API Server is Functioning
         return 200
