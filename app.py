@@ -19,7 +19,7 @@
 import sys, getopt
 
 # Import Flask Packages
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 from flask_restful import Api
 # from flask_cors import CORS
 
@@ -29,7 +29,7 @@ from Util import Config
 # Import Controller Modules
 from Controller.Status import Status
 from Controller.Submit import Submit
-from Controller.Authentication import Authentication
+# from Controller.Authentication import Authentication
 
 
 # Define Flask Application
@@ -54,18 +54,18 @@ api.add_resource(
     Submit,
     Config.API_PATH + "/submit",
     endpoint = "submit_ep")
-api.add_resource(
-    Authentication,
-    Config.API_PATH + "/login",
-    endpoint = "login_ep")
-api.add_resource(
-    Authentication,
-    Config.API_PATH + "/logout",
-    endpoint = "logout_ep")
-api.add_resource(
-    Authentication,
-    Config.API_PATH + "/signup",
-    endpoint = "signup_ep")
+# api.add_resource(
+#    Authentication,
+#    Config.API_PATH + "/login",
+#    endpoint = "login_ep")
+# api.add_resource(
+#    Authentication,
+#    Config.API_PATH + "/logout",
+#    endpoint = "logout_ep")
+# api.add_resource(
+#    Authentication,
+#    Config.API_PATH + "/signup",
+#    endpoint = "signup_ep")
 
 
 # Environment Variables
