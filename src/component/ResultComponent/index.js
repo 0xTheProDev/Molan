@@ -69,7 +69,7 @@ export class ResultComponent extends Component {
                         <Form>
                             <label htmlFor='custom_output'>Custom Output:</label>
                             <TextArea
-                              readOnly
+                              disabled
                               autoHeight
                               value={result.output}
                               placeholder='No Output to show'
