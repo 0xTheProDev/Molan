@@ -79,7 +79,11 @@ def build(id, source_code, input_data = None, version = "2"):
     
     # Non-zero Exit Code
     except subprocess.CalledProcessError:
-        ret_obj = { "id": id, "status": "Runtime Error", "input": input_data }
+        ret_obj = { "id": id, "status": "Runtime Error", "input": input_data, "output": "Non Zero Exit Code" }
+
+    # Any other Exception
+    except Exception:
+        ret_obj = { "id": id, "status": "Runtime Error", "input": input_data, "output": "Segmentation Fault" }
 
     # Close file connections
     if (fin != None):
