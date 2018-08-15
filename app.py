@@ -17,7 +17,7 @@
 
 # Import System and Util Modules
 import sys, getopt
-import uuid
+import uuid, json
 
 # Import Flask Packages
 from flask import Flask, request, make_response, render_template
@@ -64,6 +64,13 @@ def index():
 
 # REST API from Application
 api = Api(app)
+
+@api.representation('application/json')
+def output_json(data, code, headers=None):
+    resp = make_response(json.dumps(data), code)
+    resp.headers.extend(headers or {})
+    resp.headers.set("Access-Control-Allow-Origin", request.host)
+    return resp
 
 api.add_resource(
     Status,
