@@ -68,11 +68,11 @@ def build(id, source_code, input_data = None):
             ferr.seek(0)
             err = ferr.read().replace(source_file, "prog.py")
             ret_obj = { "id": id, "status": "Compile Error", "input": input_data, "output": err }
-    
+
     # Process killed due to Timeout
     except subprocess.TimeoutExpired:
         ret_obj = { "id": id, "status": "Time Limit Exceeded", "input": input_data }
-    
+
     # Non-zero Exit Code
     except subprocess.CalledProcessError:
         ret_obj = { "id": id, "status": "Runtime Error", "input": input_data, "output": "Non Zero Exit Code" }
@@ -90,7 +90,7 @@ def build(id, source_code, input_data = None):
         ferr.close()
 
     # Delete all files during production
-    if delete(source_file, None, input_file if fin else None, output_file, err_file) == -1:
+    if delete(source_file, None, input_file, output_file, err_file) == -1:
         print("Error occured while deleting files")
 
     # Return result

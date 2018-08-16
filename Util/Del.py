@@ -20,13 +20,16 @@ from time import time
 
 def delete(source_file, binary_file, input_file, output_file, err_file):
     try:
-        os.remove(source_file)
-        if binary_file:
+        if source_file and os.path.isfile(source_file):
+            os.remove(source_file)
+        if binary_file and os.path.isfile(binary_file):
             os.remove(binary_file)
-        if input_file:
+        if input_file and os.path.isfile(input_file):
             os.remove(input_file)
-        os.remove(output_file)
-        os.remove(err_file)
+        if output_file and os.path.isfile(output_file):
+            os.remove(output_file)
+        if err_file and os.path.isfile(err_file):
+            os.remove(err_file)
         return 0
     except OSError:
         return -1
