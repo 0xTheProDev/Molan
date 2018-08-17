@@ -18,6 +18,7 @@
 import subprocess
 from Util.Extension import extension
 from Util.Del import delete
+import os
 
 def build(id, source_code, input_data = None):
     # Get file names from utility method
@@ -25,12 +26,20 @@ def build(id, source_code, input_data = None):
 
     # Write source code to file
     try:
+        os.makedirs(binary_file)
+    except Exception as e:
+        print(e)
+        print("Erorr in making directory")
+
+    try:
         fsource = open(source_file, "w+")
         fsource.write(source_code)
         fsource.close()
     except Exception as e:
         print(e)
         return { "id": id, "error": "Error occured while writing to file" }, 403
+
+
 
     # Write custom input to file
     fin = None
@@ -100,8 +109,13 @@ def build(id, source_code, input_data = None):
         ferr.close()
 
     # Delete all files during production
-    if delete(source_file, binary_file, input_file, output_file, err_file) == -1:
+    if delete(source_file, binary_file + '/Molan.class', input_file, output_file, err_file) == -1:
         print("Error occured while deleting files")
+
+    try:
+        os.rmdir(binary_file)
+    except Exception as e:
+        print('Error in deleting folder: ' + e.__str__())
 
     # Return result
     return ret_obj, 200
