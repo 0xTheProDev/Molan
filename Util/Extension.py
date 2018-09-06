@@ -15,8 +15,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>
 
-import os
-from time import time
+import os, uuid, base64
 
 def extension(lang):
     def static(lang):
@@ -33,8 +32,9 @@ def extension(lang):
         else:
             return ".txt"
 
-    # Get timestamp and target path
-    timestamp = int(time())
+    # Generate file name and target path
+    _uuid     = uuid.uuid4().__str__()
+    timestamp = base64.b64encode(_uuid.encode("utf-8")).decode("utf-8")
     data_path = os.path.normpath(os.path.join(os.getcwd(), "./data"))
 
     # Resolve file names

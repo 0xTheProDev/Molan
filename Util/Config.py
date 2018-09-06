@@ -19,10 +19,6 @@
 API_CONF = {
     "host": "0.0.0.0",
     "version": "1.0.0",
-    "port": 3000
+    "port": 8080
 }
 API_PATH = "/api"
-TEST_DATA = {
-    "username": "abc@cba.com",
-    "password": "1234"
-}
