@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import submitAction from 'action/submitAction';
 import { Button } from 'semantic-ui-react';
 import { NotificationManager } from 'react-notifications';
+import { HotKeys } from 'react-hotkeys';
 
 export class SubmitButton extends Component {
     static propTypes = {
@@ -14,6 +15,15 @@ export class SubmitButton extends Component {
         service:    PropTypes.object.isRequired,
         onCallback: PropTypes.func.isRequired,
         submit:     PropTypes.func.isRequired
+    };
+
+    keyMap = {
+        quickSubmit: 'ctrl+k'
+    };
+
+    handlers = {
+        'quickSubmit': () => console.log('works')
+        
     };
 
     onClick = () => {
@@ -35,13 +45,15 @@ export class SubmitButton extends Component {
 
     render() {
         return (
-            <Button
-              type='button'
-              size='large'
-              floated='right'
-              color='green'
-              onClick={this.onClick}
-            >Submit</Button>
+            <HotKeys keyMap={this.keyMap} handlers={this.handlers}>
+                <Button
+                  type='button'
+                  size='large'
+                  floated='right'
+                  color='green'
+                  onClick={this.onClick}
+                >Submit</Button>
+            </HotKeys>
         );
     }
 }
