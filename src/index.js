@@ -19,7 +19,7 @@ axios.defaults.baseURL = "/api";
 axios.defaults.xsrfHeaderName = "X-CSRFToken";
 axios.defaults.headers.common["Content-Type"] = "application/json";
 axios.defaults.headers.common["Access-Control-Allow-Origin"] = window.location.host;
-axios.defaults.headers.common["X-CSRFToken"] = document.querySelector("meta[name='_csrf_token']").getAttribute("content");;
+// axios.defaults.headers.common["X-CSRFToken"] = document.querySelector("meta[name='_csrf_token']").getAttribute("content");;
 
 
 /**

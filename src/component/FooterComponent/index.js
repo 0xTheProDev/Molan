@@ -57,7 +57,7 @@ export class FooterComponent extends Component {
             <div className="footer-content">
                 <div className="copyright">
                     <Segment basic>
-                        &copy; All rights reserved by <a href="https://github.com/Tech-Mantra" target="_blank" rel="noopener noreferrer">Tech-Mantra</a>
+                        &copy; <span className='lg-only'>All rights reserved by</span> <a href="https://github.com/Tech-Mantra" target="_blank" rel="noopener noreferrer">Tech-Mantra</a>
                     </Segment>
                 </div>
                 <div className="footer-cols">

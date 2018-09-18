@@ -8,3 +8,9 @@
 .editor-col:active, .editor-col:focus {
     border-color: #85b7d9 !important;
 }
+
+@media(max-width: 800px) {
+    .lg-only {
+        display: none !important;
+    }
+}

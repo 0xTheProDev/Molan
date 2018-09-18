@@ -116,7 +116,7 @@ export default class EditorContainer extends Component {
                         />
                     </Grid.Column>
                     <Grid.Column>{''}</Grid.Column>
-                    <Grid.Column>
+                    <Grid.Column className='lg-only'>
                         <SettingsDropdown
                           defaultChecked={options.lineNumbers}
                           darkThemed={theme === 'vs-dark'}
