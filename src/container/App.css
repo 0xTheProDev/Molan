@@ -21,6 +21,23 @@
     top: 0;
 }
 
+.headerp .clock-area {
+    position: absolute !important;
+    margin-left: auto !important;
+    right: 10px !important;
+    top: 5px !important;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: 1px solid rgba(0,0,0,.4);
+    border-radius: 10px;
+    transition: all .5s ease;
+}
+
+.headerp .clock-area:hover {
+    box-shadow: 1px 1px rgba(0,0,0,.6);
+}
+
 .footer {
     position: fixed !important;
     bottom: 0;

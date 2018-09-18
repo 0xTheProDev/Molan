@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Clock from 'react-live-clock';
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
 import HeaderComponent from 'component/HeaderComponent';
@@ -30,6 +31,10 @@ export default class AppContainer extends Component {
             <div className="main-page">
               <header className="headerp">
                 <HeaderComponent/>
+                <div className='clock-area'>
+                  <i aria-hidden='true' class='clock outline icon' />&nbsp;
+                  <Clock ticking format={'hh:mm:ssa'} />
+                </div>
               </header>
               <main className={ dark ? "container dark" : "container" }>
                 <Grid container centered columns={1}>
