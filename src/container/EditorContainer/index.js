@@ -103,6 +103,7 @@ export default class EditorContainer extends Component {
 
     onChangeTheme = () => {
         const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
+        this.props.onDark(theme === 'vs-dark');
         this.setState(Object.assign({}, this.state, { theme: theme }));
     };
 
@@ -110,12 +111,12 @@ export default class EditorContainer extends Component {
         const options = Object.assign({}, this.state.options);
         options.fullScreen = ! options.fullScreen;
         this.setState(Object.assign({}, this.state, { options: options }));
-    }
+    };
 
     onSubmit = () => {
         this.updateCache();
         this.props.onSubmit(true);
-    }
+    };
 
     render() {
         const { lang, code, custom, input, theme, options } = this.state;
@@ -192,6 +193,7 @@ export default class EditorContainer extends Component {
                                   autoHeight
                                   placeholder='Enter your input here'
                                   onChange={this.onInputChange}
+                                  className={theme === 'vs-dark' ? 'dark' : ''}
                                 />
                             </Form>
                         </Grid.Column>

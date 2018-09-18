@@ -9,6 +9,11 @@
     border-color: #85b7d9 !important;
 }
 
+.editor-section textarea.dark, .editor-section textarea.dark:focus, .editor-section textarea.dark:active {
+    background: #000;
+    color: #fff;
+}
+
 @media(max-width: 800px) {
     .lg-only {
         display: none !important;

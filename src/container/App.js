@@ -10,26 +10,36 @@ export default class AppContainer extends Component {
     constructor(props) {
       super(props);
       this.state = {
-          submit: null
+          submit: null,
+          dark: false
       };
     }
 
     onSubmit = (param) => {
-        this.setState({ submit: param });
+        this.setState(Object.assign({}, { submit: param }));
+    };
+
+    onDark = (param) => {
+        this.setState(Object.assign({}, { dark: param }));
     };
 
     render() {
+        const { dark } = this.state;
+
         return (
             <div className="main-page">
               <header className="headerp">
                 <HeaderComponent/>
               </header>
-              <main className="container">
+              <main className={ dark ? "container dark" : "container" }>
                 <Grid container centered columns={1}>
                   <Grid.Column>
                     <section className="editor-section">
                       <Segment raised>
-                        <EditorContainer onSubmit={this.onSubmit}/>
+                        <EditorContainer
+                          onSubmit={this.onSubmit}
+                          onDark={this.onDark}
+                        />
                       </Segment>
                     </section>
                     <section className="result-section">

@@ -2,6 +2,10 @@
     padding: 30px 0 60px !important;
 }
 
+.container.dark {
+    background: rgba(0,0,0,.4) !important;
+}
+
 .editor-section, .result-section {
     margin: 30px 0;
 }
