@@ -4,6 +4,7 @@
 }
 
 .service-status {
+    min-width: 120px;
     border: 1px solid rgba(34,36,38,.15) !important;
     border-radius: 10px !important;
     cursor: pointer !important;
