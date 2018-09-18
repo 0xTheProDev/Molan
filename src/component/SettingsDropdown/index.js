@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Popup, Checkbox, Button, Icon, Header } from 'semantic-ui-react';
+import './index.css';
 
 export default class SettingsDropdown extends Component {
     static propTypes = {
         defaultChecked:   PropTypes.bool.isRequired,
         darkThemed:       PropTypes.bool.isRequired,
         onChangeLineNum:  PropTypes.func.isRequired,
-        onChangeTheme:    PropTypes.func.isRequired
+        onChangeTheme:    PropTypes.func.isRequired,
+        isFullScreen:     PropTypes.bool.isRequired,
+        onFullScreen:     PropTypes.func.isRequired
     };    
 
     render() {
+        const { darkThemed, onChangeTheme, isFullScreen, onFullScreen } = this.props;
+
         return (
             <div>
                 <Popup
@@ -30,8 +35,13 @@ export default class SettingsDropdown extends Component {
                     }
                     <Checkbox
                         label="Night Mode"
-                        checked={this.props.darkThemed}
-                        onChange={this.props.onChangeTheme}
+                        checked={darkThemed}
+                        onChange={onChangeTheme}
+                    />
+                    <Checkbox
+                        label="Full Screen"
+                        checked={isFullScreen}
+                        onChange={onFullScreen}
                     />
                 </Popup>
             </div>

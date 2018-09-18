@@ -7,6 +7,7 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-full-screen": "^0.2.3",
     "react-monaco-editor": "^0.17.2",
     "react-notifications": "^1.4.3",
     "react-redux": "^5.0.7",

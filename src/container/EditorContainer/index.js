@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Checkbox, Form, TextArea } from 'semantic-ui-react';
+import Fullscreen from "react-full-screen";
 import MonacoEditor from 'react-monaco-editor';
 import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
@@ -32,6 +33,7 @@ export default class EditorContainer extends Component {
             theme: 'vs-light',
             options: {
                 lineNumbers: true,
+                fullScreen: false,
                 rulers: false
             }
         };
@@ -104,6 +106,17 @@ export default class EditorContainer extends Component {
         this.setState(Object.assign({}, this.state, { theme: theme }));
     };
 
+    onFullScreen = () => {
+        const options = Object.assign({}, this.state.options);
+        options.fullScreen = ! options.fullScreen;
+        this.setState(Object.assign({}, this.state, { options: options }));
+    }
+
+    onSubmit = () => {
+        this.updateCache();
+        this.props.onSubmit(true);
+    }
+
     render() {
         const { lang, code, custom, input, theme, options } = this.state;
         return (
@@ -122,6 +135,8 @@ export default class EditorContainer extends Component {
                           darkThemed={theme === 'vs-dark'}
                           onChangeLineNum={this.onChangeLineNum}
                           onChangeTheme={this.onChangeTheme}
+                          isFullScreen={options.fullScreen}
+                          onFullScreen={this.onFullScreen}
                         />
                         <ButtonGroup
                           lang={lang}
@@ -133,16 +148,21 @@ export default class EditorContainer extends Component {
                 </Grid.Row>
                 <Grid.Row centered>
                     <Grid.Column width={16} stretched className='editor-col'>
-                        <MonacoEditor
-                          height='300'
-                          width='100%'
-                          theme={theme}
-                          language={lang === 'python3' ? 'python' : lang}
-                          value={code}
-                          onChange={this.onEditorChange}
-                          options={options}
-                          requireConfig={requireConfig}
-                        />
+                        <Fullscreen
+                          enabled={options.fullScreen}
+                          onChange={this.onFullScreen}
+                        >
+                            <MonacoEditor
+                              height='300'
+                              width='100%'
+                              theme={theme}
+                              language={lang === 'python3' ? 'python' : lang}
+                              value={code}
+                              onChange={this.onEditorChange}
+                              options={options}
+                              requireConfig={requireConfig}
+                            />
+                        </Fullscreen>
                     </Grid.Column>
                 </Grid.Row>
                 <Grid.Row columns={2}>
@@ -159,7 +179,7 @@ export default class EditorContainer extends Component {
                           code={code}
                           checked={custom}
                           input={input}
-                          onCallback={() => { this.updateCache(); this.props.onSubmit(true); }}
+                          onCallback={this.onSubmit}
                         />
                     </Grid.Column>
                 </Grid.Row>
