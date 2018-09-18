@@ -51,8 +51,23 @@ export default class EditorContainer extends Component {
         this.setState(Object.assign({}, this.state, { lang: 'c', code: item ? item.code : '' }));
     }
 
+    triggerNightMode = () => {
+        const { theme } = this.state;
+
+        const now  = Date.now();
+        const time = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 0, 0, 0);
+        let diff = time - now;
+        if (diff < 0) {
+            if (theme === 'vs-light')
+                this.onChangeTheme();
+            diff += 43200000;
+        }
+        window.setTimeout(() => theme === 'vs-dark' && this.onChangeTheme(), diff);
+    };
+
     updateCache = () => {
         const { code, lang } = this.state;
+        
         if (code.length !== 0) {
             const item = this.code.find(e => e.lang === lang);
             if (typeof item === 'undefined' || item === null) {
@@ -103,7 +118,8 @@ export default class EditorContainer extends Component {
 
     onChangeTheme = () => {
         const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
-        this.props.onDark(theme === 'vs-dark');
+        if (theme === 'vs-dark')
+            this.props.onDark(true);
         this.setState(Object.assign({}, this.state, { theme: theme }));
     };
 
@@ -120,6 +136,7 @@ export default class EditorContainer extends Component {
 
     render() {
         const { lang, code, custom, input, theme, options } = this.state;
+        
         return (
             <Grid>
                 <Grid.Row columns={3}>
