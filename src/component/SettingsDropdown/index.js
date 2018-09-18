@@ -11,7 +11,7 @@ export default class SettingsDropdown extends Component {
         onChangeTheme:    PropTypes.func.isRequired,
         isFullScreen:     PropTypes.bool.isRequired,
         onFullScreen:     PropTypes.func.isRequired
-    };    
+    };
 
     render() {
         const { darkThemed, onChangeTheme, isFullScreen, onFullScreen } = this.props;
@@ -19,7 +19,7 @@ export default class SettingsDropdown extends Component {
         return (
             <div>
                 <Popup
-                  trigger={<Button floated='right' basic><Icon name='settings'/></Button>}
+                  trigger={<Button floated='right' title='Settings' basic><Icon name='settings'/></Button>}
                   on='click'
                   position='bottom center'
                 >
@@ -38,12 +38,15 @@ export default class SettingsDropdown extends Component {
                         checked={darkThemed}
                         onChange={onChangeTheme}
                     />
-                    <Checkbox
-                        label="Full Screen"
-                        checked={isFullScreen}
-                        onChange={onFullScreen}
-                    />
                 </Popup>
+                <Button basic
+                  floated='right'
+                  title='Full Screen'
+                  active={isFullScreen}
+                  onClick={onFullScreen}
+                >
+                    <Icon name='expand'/>
+                </Button>
             </div>
         );
     }

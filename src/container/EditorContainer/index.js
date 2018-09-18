@@ -67,7 +67,7 @@ export default class EditorContainer extends Component {
 
     updateCache = () => {
         const { code, lang } = this.state;
-        
+
         if (code.length !== 0) {
             const item = this.code.find(e => e.lang === lang);
             if (typeof item === 'undefined' || item === null) {
@@ -118,8 +118,7 @@ export default class EditorContainer extends Component {
 
     onChangeTheme = () => {
         const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
-        if (theme === 'vs-dark')
-            this.props.onDark(true);
+        this.props.onDark(theme === 'vs-dark');
         this.setState(Object.assign({}, this.state, { theme: theme }));
     };
 
@@ -136,18 +135,17 @@ export default class EditorContainer extends Component {
 
     render() {
         const { lang, code, custom, input, theme, options } = this.state;
-        
+
         return (
             <Grid>
-                <Grid.Row columns={3}>
-                    <Grid.Column stretched>
+                <Grid.Row>
+                    <Grid.Column width={4} stretched>
                         <DropdownSelection
                           defaultLang={lang}
                           onChange={this.onLangChange}
                         />
                     </Grid.Column>
-                    <Grid.Column>{''}</Grid.Column>
-                    <Grid.Column className='lg-only'>
+                    <Grid.Column width={12} className=' lg-only'>
                         <SettingsDropdown
                           defaultChecked={options.lineNumbers}
                           darkThemed={theme === 'vs-dark'}
@@ -171,7 +169,7 @@ export default class EditorContainer extends Component {
                           onChange={this.onFullScreen}
                         >
                             <MonacoEditor
-                              height='300'
+                              height={options.fullScreen ? '800' : '300'}
                               width='100%'
                               theme={theme}
                               language={lang === 'python3' ? 'python' : lang}
