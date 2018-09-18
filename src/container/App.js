@@ -32,7 +32,7 @@ export default class AppContainer extends Component {
               <header className="headerp">
                 <HeaderComponent/>
                 <div className='clock-area'>
-                  <i aria-hidden='true' class='clock outline icon' />&nbsp;
+                  <i aria-hidden='true' className='clock outline icon' />&nbsp;
                   <Clock ticking format={'hh:mm:ssa'} />
                 </div>
               </header>
