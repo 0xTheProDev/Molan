@@ -3,7 +3,6 @@ import Clock from 'react-live-clock';
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
 import HeaderComponent from 'component/HeaderComponent';
-import EditorContainer from 'container/EditorContainer';
 import ResultComponent from "component/ResultComponent";
 import FooterComponent from "component/FooterComponent";
 
@@ -41,10 +40,14 @@ export default class AppContainer extends Component {
                   <Grid.Column>
                     <section className="editor-section">
                       <Segment raised>
-                        <EditorContainer
-                          onSubmit={this.onSubmit}
-                          onDark={this.onDark}
-                        />
+                      {
+                          import('container/EditorContainer').then(EditorContainer =>
+                                <EditorContainer
+                                  onSubmit={this.onSubmit}
+                                  onDark={this.onDark}
+                                />
+                            )
+                      }
                       </Segment>
                     </section>
                     <section className="result-section">
