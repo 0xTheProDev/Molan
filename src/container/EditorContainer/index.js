@@ -61,8 +61,10 @@ export default class EditorContainer extends Component {
             if (theme === 'vs-light')
                 this.onChangeTheme();
             diff += 43200000;
+            window.setTimeout(() => theme === 'vs-dark' && this.onChangeTheme(), diff);
+        } else {
+            window.setTimeout(() => theme === 'vs-light' && this.onChangeTheme(), diff);
         }
-        window.setTimeout(() => theme === 'vs-dark' && this.onChangeTheme(), diff);
     };
 
     updateCache = () => {
