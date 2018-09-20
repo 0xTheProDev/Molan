@@ -6,6 +6,16 @@
     background: rgba(0,0,0,.4) !important;
 }
 
+.loading {
+    height: 400px;
+}
+
+.loading img {
+    pointer-events: none !important;
+    height: 300px;
+    margin: 50px 400px;
+}
+
 .editor-section, .result-section {
     margin: 30px 0;
 }

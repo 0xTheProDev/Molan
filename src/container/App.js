@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import Clock from 'react-live-clock';
+import Loadable from "react-loadable";
+import Clock from "react-live-clock";
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
-import HeaderComponent from 'component/HeaderComponent';
+import _img from "./loading.gif"; 
+import HeaderComponent from "component/HeaderComponent";
 import ResultComponent from "component/ResultComponent";
 import FooterComponent from "component/FooterComponent";
+
+const LoadableEditor = Loadable({
+    loader:  () => import("container/EditorContainer"),
+    loading: () => <div className="loading"><img src={_img} /></div>
+});
 
 export default class AppContainer extends Component {
     constructor(props) {
@@ -30,9 +37,9 @@ export default class AppContainer extends Component {
             <div className="main-page">
               <header className="headerp">
                 <HeaderComponent/>
-                <div className='clock-area'>
-                  <i aria-hidden='true' className='clock outline icon' />&nbsp;
-                  <Clock ticking format={'hh:mm:ssa'} />
+                <div className="clock-area">
+                  <i aria-hidden="true" className="clock outline icon" />&nbsp;
+                  <Clock ticking format={"hh:mm:ssa"} />
                 </div>
               </header>
               <main className={ dark ? "container dark" : "container" }>
@@ -40,14 +47,10 @@ export default class AppContainer extends Component {
                   <Grid.Column>
                     <section className="editor-section">
                       <Segment raised>
-                      {
-                          import('container/EditorContainer').then(EditorContainer =>
-                                <EditorContainer
-                                  onSubmit={this.onSubmit}
-                                  onDark={this.onDark}
-                                />
-                            )
-                      }
+                        <LoadableEditor
+                          onSubmit={this.onSubmit}
+                          onDark={this.onDark}
+                        />
                       </Segment>
                     </section>
                     <section className="result-section">
