@@ -53,7 +53,7 @@ def build(id, source_code, input_data = None):
         return { "id": id, "error": "Error occured while creating file" }, 403
 
     # Call subprocess to compile
-    ret_val =  subprocess.call(["gcc", source_file, "-o", binary_file, "-ansi", "-pedantic", "-fno-asm"], stdin = None, stdout = None, stderr = ferr)
+    ret_val =  subprocess.call(["gcc", source_file, "-o", binary_file, "-lm", "-pedantic", "-fno-asm"], stdin = None, stdout = None, stderr = ferr)
 
     # Return object initialized to 'None'
     ret_obj = None
