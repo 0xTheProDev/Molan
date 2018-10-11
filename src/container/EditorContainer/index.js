@@ -93,7 +93,7 @@ export default class EditorContainer extends Component {
         this.setState(Object.assign({}, this.state, { lang: d.value, code: temp }));
     };
 
-    onEditorChange = (d) => {
+    onEditorChange = d => {
         this.setState(Object.assign({}, this.state, { code: d }));
     };
 
@@ -115,19 +115,19 @@ export default class EditorContainer extends Component {
     onChangeLineNum = () => {
         const options = Object.assign({}, this.state.options);
         options.lineNumbers = ! options.lineNumbers;
-        this.setState(Object.assign({}, this.state, { options: options }));
+        this.setState(Object.assign({}, this.state, { options }));
     };
 
     onChangeTheme = () => {
         const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
         this.props.onDark(theme === 'vs-dark');
-        this.setState(Object.assign({}, this.state, { theme: theme }));
+        this.setState(Object.assign({}, this.state, { theme }));
     };
 
     onFullScreen = () => {
         const options = Object.assign({}, this.state.options);
         options.fullScreen = ! options.fullScreen;
-        this.setState(Object.assign({}, this.state, { options: options }));
+        this.setState(Object.assign({}, this.state, { options }));
     };
 
     onSubmit = () => {

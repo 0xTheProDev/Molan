@@ -3,14 +3,14 @@ import Loadable from "react-loadable";
 import Clock from "react-live-clock";
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
-import _img from "./loading.gif"; 
+import _img from "./loading.gif";
 import HeaderComponent from "component/HeaderComponent";
 import ResultComponent from "component/ResultComponent";
 import FooterComponent from "component/FooterComponent";
 
 const LoadableEditor = Loadable({
     loader:  () => import("container/EditorContainer"),
-    loading: () => <div className="loading"><img src={_img} /></div>
+    loading: () => <div className="loading"><img src={_img} alt="Loading" /></div>
 });
 
 export default class AppContainer extends Component {
@@ -22,11 +22,11 @@ export default class AppContainer extends Component {
       };
     }
 
-    onSubmit = (param) => {
+    onSubmit = param => {
         this.setState(Object.assign({}, { submit: param }));
     };
 
-    onDark = (param) => {
+    onDark = param => {
         this.setState(Object.assign({}, { dark: param }));
     };
 
