@@ -14,7 +14,7 @@
     "react-monaco-editor": "^0.17.2",
     "react-notifications": "^1.4.3",
     "react-redux": "^5.0.7",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.1",
     "redux": "^4.0.0",
     "redux-promise": "^0.6.0",
     "save-as": "^0.1.8",
