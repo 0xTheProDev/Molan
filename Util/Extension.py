@@ -29,6 +29,8 @@ def extension(lang):
             return ".py"
         elif lang == "js" or lang == "javascript" or lang == "Javascript":
             return ".js"
+        elif lang == "MIPS":
+            return ".s"
         else:
             return ".txt"
 
@@ -51,6 +53,12 @@ def extension(lang):
 
     elif lang == "python" or lang == "Python" or lang == "js" or lang == "javascript" or lang == "Javascript":
         return source_file, input_file, output_file, err_file
+    
+    elif lang == "MIPS":
+        main_file = "data/{}{}".format(timestamp, static(lang))
+        binary_file = "{}/{}{}".format(data_path, timestamp, ".out")
+        output_file = "{}/{}.o".format(data_path,timestamp)
+        return main_file, source_file, binary_file, input_file, output_file, err_file
 
     else:
         return source_file, binary_file, input_file, output_file, err_file

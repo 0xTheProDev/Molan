@@ -26,6 +26,7 @@ from Model.Submit.Submit_C import build as cb
 from Model.Submit.Submit_CPP import build as cppb
 from Model.Submit.Submit_PY import build as pb
 from Model.Submit.Submit_JAVA import build as jab
+from Model.Submit.Submit_MIPS import build as mp
 # from Model.Submit.Submit_JS import build as jsb
 
 class Submit(Resource):
@@ -58,6 +59,9 @@ class Submit(Resource):
         
         elif req_data["language"] == "python3" or req_data["language"] == "Python3":
             return pb(req_id, source_code, input_data, "3")
+
+        elif req_data["language"] == "MIPS":
+            return mp(req_id, source_code, input_data)
 
         # Build target for JavaScript program
         #elif req_data["language"] == "js" or req_data["language"] == "javascript" or req_data["language"] == "Javascript":
