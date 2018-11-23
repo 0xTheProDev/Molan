@@ -1,4 +1,5 @@
 # Storage for database object
+**/dbconfig.py
 db.json
 
 # Byte-compiled / optimized / DLL files
