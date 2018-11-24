@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Loadable from "react-loadable";
 import Clock from "react-live-clock";
 import { Grid, Segment } from "semantic-ui-react";
 import "./App.css";
@@ -8,18 +7,25 @@ import HeaderComponent from "component/HeaderComponent";
 import ResultComponent from "component/ResultComponent";
 import FooterComponent from "component/FooterComponent";
 
-const LoadableEditor = Loadable({
-    loader:  () => import("container/EditorContainer"),
-    loading: () => <div className="loading"><img src={_img} alt="Loading" /></div>
-});
+const LoadingComponent = () => <div className="loading"><img src={_img} alt="Loading" /></div>;
 
 export default class AppContainer extends Component {
     constructor(props) {
       super(props);
       this.state = {
+          Editor: null,
           submit: null,
-          dark: false
+          dark:   false
       };
+    }
+
+    componentDidMount() {
+        import("container/EditorContainer").then(({ default: Editor }) => {
+            this.setState({
+                ...this.state,
+                Editor
+            });
+        });
     }
 
     onSubmit = param => {
@@ -31,7 +37,7 @@ export default class AppContainer extends Component {
     };
 
     render() {
-        const { dark } = this.state;
+        const { Editor, dark } = this.state;
 
         return (
             <div className="main-page">
@@ -47,10 +53,14 @@ export default class AppContainer extends Component {
                   <Grid.Column>
                     <section className="editor-section">
                       <Segment raised>
-                        <LoadableEditor
-                          onSubmit={this.onSubmit}
-                          onDark={this.onDark}
-                        />
+                        {
+                            Editor ?
+                            <Editor
+                              onSubmit={this.onSubmit}
+                              onDark={this.onDark}
+                            />:
+                            <LoadingComponent />
+                        }
                       </Segment>
                     </section>
                     <section className="result-section">

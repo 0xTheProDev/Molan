@@ -10,7 +10,6 @@
     "react-full-screen": "^0.2.3",
     "react-hotkeys": "^1.1.4",
     "react-live-clock": "^2.0.3",
-    "react-loadable": "^5.5.0",
     "react-monaco-editor": "^0.17.2",
     "react-notifications": "^1.4.3",
     "react-redux": "^5.0.7",
@@ -26,7 +25,7 @@
   "scripts": {
     "start": "NODE_PATH=src/ react-scripts start",
     "build": "NODE_PATH=src/ react-scripts build",
-    "test":  "NODE_PATH=src/ react-scripts test --env=jsdom",
+    "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src/ react-scripts eject"
   },
   "browserslist": [
