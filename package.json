@@ -19,12 +19,11 @@
     "save-as": "^0.1.8",
     "secure-ls": "^1.2.1",
     "semantic-ui-css": "^2.3.3",
-    "semantic-ui-react": "^0.82.2",
-    "source-map-support": "^0.5.6"
+    "semantic-ui-react": "^0.82.2"
   },
   "scripts": {
     "start": "NODE_PATH=src/ react-scripts start",
-    "build": "NODE_PATH=src/ react-scripts build",
+    "build": "NODE_PATH=src/ GENERATE_SOURCEMAP=false react-scripts build",
     "test": "NODE_PATH=src/ react-scripts test --env=jsdom",
     "eject": "NODE_PATH=src/ react-scripts eject"
   },

@@ -13,13 +13,17 @@ import registerServiceWorker from "util/registerServiceWorker";
 
 
 /**
- * Axios Configuration
+ * Axios Configuration for REST API
+ * If CSRF token is provided, app is served from Server
  */
-axios.defaults.baseURL = "/api";
-axios.defaults.xsrfHeaderName = "X-CSRFToken";
-axios.defaults.headers.common["Content-Type"] = "application/json";
-axios.defaults.headers.common["Access-Control-Allow-Origin"] = window.location.host;
-// axios.defaults.headers.common["X-CSRFToken"] = document.querySelector("meta[name='_csrf_token']").getAttribute("content");;
+ const _token = document.querySelector("meta[name='_csrf_token']");
+ if (typeof _token !== "undefined" && _token !== null) {
+    axios.defaults.baseURL                                       = "/api";
+    axios.defaults.headers.common["Content-Type"]                = "application/json";
+    axios.defaults.headers.common["Access-Control-Allow-Origin"] = window.location.host;
+    axios.defaults.xsrfHeaderName                                = "X-CSRFToken";
+    axios.defaults.headers.common["X-CSRFToken"]                 = _token.getAttribute("content");;
+}
 
 
 /**
@@ -27,7 +31,7 @@ axios.defaults.headers.common["Access-Control-Allow-Origin"] = window.location.h
  */
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware)(createStore);
 const store = createStoreWithMiddleware(
-    reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    reducer//, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 
