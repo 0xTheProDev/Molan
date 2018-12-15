@@ -32,7 +32,6 @@ from Util import Config
 # Import Controller Modules
 from Controller.Status import Status
 from Controller.Submit import Submit
-# from Controller.Authentication import Authentication
 
 
 # Define Flask Application
@@ -80,18 +79,6 @@ api.add_resource(
     Submit,
     Config.API_PATH + "/submit",
     endpoint = "submit_ep")
-# api.add_resource(
-#    Authentication,
-#    Config.API_PATH + "/login",
-#    endpoint = "login_ep")
-# api.add_resource(
-#    Authentication,
-#    Config.API_PATH + "/logout",
-#    endpoint = "logout_ep")
-# api.add_resource(
-#    Authentication,
-#    Config.API_PATH + "/signup",
-#    endpoint = "signup_ep")
 
 
 # Environment Variables
@@ -133,7 +120,6 @@ if __name__ == "__main__":
             sys.exit(2)
     try:
         app.run(debug = debugFlag, host = hostEnv, port = portEnv, threaded = True)
-        # ssl_context="adhoc"
     except Exception as e:
         print("Failed to start application:", e)
         sys.exit(3)
