@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Checkbox, Form, TextArea } from 'semantic-ui-react';
-import Fullscreen from "react-full-screen";
+import Fullscreen from 'react-full-screen';
 import MonacoEditor from 'react-monaco-editor';
 import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
@@ -186,9 +186,10 @@ export default class EditorContainer extends Component {
                 <Grid.Row columns={2}>
                     <Grid.Column>
                         <Checkbox
-                          label="Custom Input"
+                          label='Custom Input'
                           checked={custom}
                           onChange={this.onChecked}
+                          className='input-checkbox'
                         />
                     </Grid.Column>
                     <Grid.Column>
