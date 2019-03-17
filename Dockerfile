@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-RUN apt-get update -y && apt-get install -y python3 &&apt-get install -y python3-pip python3-dev
+RUN apt-get update -y && apt-get install -y python && apt-get install -y python3 && apt-get install -y python3-pip python3-dev && apt-get install -y python2.7
 
 WORKDIR /app
 
