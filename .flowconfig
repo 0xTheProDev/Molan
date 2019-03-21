@@ -1,0 +1,24 @@
+[ignore]
+build
+public
+
+[include]
+src
+
+[libs]
+node_modules
+
+[lints]
+
+[options]
+include_warnings=true
+module.use_strict=true
+
+module.name_mapper='^action\(.*\)$' -> '<PROJECT_ROOT>/src/action/\1'
+module.name_mapper='^component\(.*\)$' -> '<PROJECT_ROOT>/src/component/\1'
+module.name_mapper='^container\(.*\)$' -> '<PROJECT_ROOT>/src/container/\1'
+module.name_mapper='^reducer\(.*\)$' -> '<PROJECT_ROOT>/src/reducer/\1'
+module.name_mapper='^type\(.*\)$' -> '<PROJECT_ROOT>/src/type/\1'
+module.name_mapper='^util\(.*\)$' -> '<PROJECT_ROOT>/src/util/\1'
+
+[strict]

@@ -1,8 +1,9 @@
+// @flow
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import MonacoEditor from 'react-monaco';
 import { Grid, Checkbox, Form, TextArea } from 'semantic-ui-react';
 import Fullscreen from 'react-full-screen';
-import MonacoEditor from 'react-monaco-editor';
 import './index.css';
 import DropdownSelection from 'component/DropdownSelection';
 import ButtonGroup from 'component/ButtonGroup';
@@ -10,13 +11,6 @@ import SettingsDropdown from 'component/SettingsDropdown';
 import SubmitButton from 'component/SubmitButton';
 import template from 'util/template';
 import { get, set, remove } from 'util/store';
-
-const requireConfig = {
-    url: 'https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js',
-    paths: {
-        'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.14.0/min/vs/'
-    }
-};
 
 export default class EditorContainer extends Component {
     static propTypes = {
@@ -30,11 +24,11 @@ export default class EditorContainer extends Component {
             code: '',
             custom: false,
             input: '',
-            theme: 'vs-light',
+            theme: 'light',
             options: {
                 lineNumbers: true,
                 fullScreen: false,
-                rulers: false
+                minimap: false
             }
         };
         this.code = [];
@@ -58,12 +52,12 @@ export default class EditorContainer extends Component {
         const time = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 19, 0, 0, 0);
         let diff = time - now;
         if (diff < 0) {
-            if (theme === 'vs-light')
+            if (theme === 'light')
                 this.onChangeTheme();
             diff += 43200000;
-            window.setTimeout(() => theme === 'vs-dark' && this.onChangeTheme(), diff);
+            window.setTimeout(() => theme === 'dark' && this.onChangeTheme(), diff);
         } else {
-            window.setTimeout(() => theme === 'vs-light' && this.onChangeTheme(), diff);
+            window.setTimeout(() => theme === 'light' && this.onChangeTheme(), diff);
         }
     };
 
@@ -90,38 +84,44 @@ export default class EditorContainer extends Component {
         } else {
             temp = item.code;
         }
-        this.setState(Object.assign({}, this.state, { lang: d.value, code: temp }));
+        this.setState({ lang: d.value, code: temp });
     };
 
-    onEditorChange = d => {
-        this.setState(Object.assign({}, this.state, { code: d }));
+    onEditorChange = (d: string) => {
+        this.setState({ code: d });
     };
 
     onChecked = () => {
-        this.setState(Object.assign({}, this.state, { custom: ! this.state.custom }));
+        this.setState({ custom: ! this.state.custom });
     };
 
     onInputChange = (_,d) => {
-        this.setState(Object.assign({}, this.state, { input: d.value }));
+        this.setState({ input: d.value });
     };
 
     onReset = () => {
         remove('molan');
         this.code = Array.from(template);
         const item = this.code.find(e => e.lang === this.state.lang);
-        this.setState(Object.assign({}, this.state, { code: item ? item.code : '' }));
+        this.setState({ code: item ? item.code : '' });
     };
 
     onChangeLineNum = () => {
         const options = Object.assign({}, this.state.options);
         options.lineNumbers = ! options.lineNumbers;
-        this.setState(Object.assign({}, this.state, { options }));
+        this.setState({ options });
+    };
+
+    onChangeMinimap = () => {
+        const options = Object.assign({}, this.state.options);
+        options.minimap = ! options.minimap;
+        this.setState({ options });
     };
 
     onChangeTheme = () => {
-        const theme = this.state.theme === 'vs-light' ? 'vs-dark' : 'vs-light';
-        this.props.onDark(theme === 'vs-dark');
-        this.setState(Object.assign({}, this.state, { theme }));
+        const theme = this.state.theme === 'light' ? 'dark' : 'light';
+        this.props.onDark(theme === 'dark');
+        this.setState({ theme });
     };
 
     onFullScreen = () => {
@@ -147,11 +147,13 @@ export default class EditorContainer extends Component {
                           onChange={this.onLangChange}
                         />
                     </Grid.Column>
-                    <Grid.Column width={12} className=' lg-only'>
+                    <Grid.Column width={12} className='lg-only'>
                         <SettingsDropdown
-                          defaultChecked={options.lineNumbers}
-                          darkThemed={theme === 'vs-dark'}
+                          lineNumbers={options.lineNumbers}
+                          minimap={options.minimap}
+                          darkThemed={theme === 'dark'}
                           onChangeLineNum={this.onChangeLineNum}
+                          onChangeMinimap={this.onChangeMinimap}
                           onChangeTheme={this.onChangeTheme}
                           isFullScreen={options.fullScreen}
                           onFullScreen={this.onFullScreen}
@@ -171,14 +173,14 @@ export default class EditorContainer extends Component {
                           onChange={this.onFullScreen}
                         >
                             <MonacoEditor
-                              height={options.fullScreen ? '800' : '300'}
+                              height={options.fullScreen ? 800 : 300}
                               width='100%'
+                              hideMinimap={!options.minimap}
+                              hideLineNumbers={!options.lineNumbers}
                               theme={theme}
                               language={lang === 'python3' ? 'python' : lang}
                               value={code}
-                              onChange={this.onEditorChange}
-                              options={options}
-                              requireConfig={requireConfig}
+                              onContentChange={this.onEditorChange}
                             />
                         </Fullscreen>
                     </Grid.Column>

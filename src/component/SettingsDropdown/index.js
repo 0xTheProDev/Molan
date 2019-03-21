@@ -5,7 +5,6 @@ import './index.css';
 
 export default class SettingsDropdown extends Component {
     static propTypes = {
-        defaultChecked:   PropTypes.bool.isRequired,
         darkThemed:       PropTypes.bool.isRequired,
         onChangeLineNum:  PropTypes.func.isRequired,
         onChangeTheme:    PropTypes.func.isRequired,
@@ -24,19 +23,20 @@ export default class SettingsDropdown extends Component {
                   position='bottom center'
                 >
                     <Header as='h5'>Settings</Header>
-                    {
-                        /*
-                        <Checkbox
-                            label="Show Line Numbers"
-                            checked={this.props.defaultChecked}
-                            onChange={this.props.onChangeLineNum}
-                        />
-                        */
-                    }
                     <Checkbox
-                        label="Night Mode"
-                        checked={darkThemed}
-                        onChange={onChangeTheme}
+                      label="Night Mode"
+                      checked={darkThemed}
+                      onChange={onChangeTheme}
+                    />
+                    <Checkbox
+                      label="Show Line Numbers"
+                      checked={this.props.lineNumbers}
+                      onChange={this.props.onChangeLineNum}
+                    />
+                    <Checkbox
+                      label="Show Minimap"
+                      checked={this.props.minimap}
+                      onChange={this.props.onChangeMinimap}
                     />
                 </Popup>
                 <Button basic

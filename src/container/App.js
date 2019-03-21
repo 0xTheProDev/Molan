@@ -21,10 +21,7 @@ export default class AppContainer extends Component {
 
     componentDidMount() {
         import("container/EditorContainer").then(({ default: Editor }) => {
-            this.setState({
-                ...this.state,
-                Editor
-            });
+            this.setState({ Editor });
         });
     }
 
