@@ -1,6 +1,6 @@
 {
   "name": "molan-web",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "dependencies": {
     "axios": "0.18.0",
@@ -11,7 +11,7 @@
     "react-full-screen": "0.2.3",
     "react-hotkeys": "1.1.4",
     "react-live-clock": "2.0.3",
-    "react-monaco": "git+ssh://git@github.com:Progyan1997/react-monaco.git#0.1.0-beta.1",
+    "react-monaco": "git+ssh://git@github.com:Progyan1997/react-monaco.git#0.1.0-beta.2",
     "react-notifications": "1.4.3",
     "react-redux": "5.0.7",
     "react-scripts": "2.1.1",

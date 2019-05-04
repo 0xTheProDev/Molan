@@ -62,16 +62,6 @@ export default class EditorContainer extends Component {
     };
 
     updateCache = () => {
-        const { code, lang } = this.state;
-
-        if (code.length !== 0) {
-            const item = this.code.find(e => e.lang === lang);
-            if (typeof item === 'undefined' || item === null) {
-                this.code.push({ lang, code });
-            } else {
-                item.code = code;
-            }
-        }
         set('molan', this.code);
     };
 
@@ -87,8 +77,17 @@ export default class EditorContainer extends Component {
         this.setState({ lang: d.value, code: temp });
     };
 
-    onEditorChange = (d: string) => {
-        this.setState({ code: d });
+    onEditorChange = (code: string) => {
+        const { lang } = this.state;
+
+        if (code.length !== 0) {
+            const item = this.code.find(e => e.lang === lang);
+            if (typeof item === 'undefined' || item === null) {
+                this.code.push({ lang, code });
+            } else {
+                item.code = code;
+            }
+        }
     };
 
     onChecked = () => {
