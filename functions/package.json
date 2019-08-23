@@ -1,5 +1,5 @@
 {
-  "name": "functions",
+  "name": "molan-functions",
   "scripts": {
     "lint": "tslint --project tsconfig.json",
     "build": "tsc",
