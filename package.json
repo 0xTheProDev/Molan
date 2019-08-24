@@ -1,7 +1,6 @@
 {
   "name": "molan-web",
   "version": "0.2.1",
-  "private": true,
   "dependencies": {
     "axios": "0.19.0",
     "classnames": "2.2.6",
@@ -23,11 +22,13 @@
     "semantic-ui-react": "0.82.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "firebase emulators:start",
+    "start:web": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "license": "GPL-3.0",
   "browserslist": [
     ">0.2%",
     "not dead",

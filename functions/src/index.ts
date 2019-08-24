@@ -1,8 +1,18 @@
 import * as functions from 'firebase-functions';
+import express from 'express';
+import cors from 'cors';
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+/** Instantiate Express Application */
+const app = express();
+
+/** Inject Middlewares to Application */
+app.use(cors());
+
+/** Status of Cloud Function Application */
+app.get('/status', (_req, res) => {
+  res.sendStatus(200);
+})
+
+export default {
+  app: functions.https.onRequest(app),
+};
