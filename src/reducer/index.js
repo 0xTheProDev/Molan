@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import formReducer from 'reducer/formReducer';
+import { combineReducers } from 'redux';
+import submitReducer from 'reducer/submitReducer';
 import serviceReducer from 'reducer/serviceReducer';
 
 export default combineReducers({
-    form:    formReducer,
+    form:    submitReducer,
     service: serviceReducer
 });

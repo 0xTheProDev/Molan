@@ -1,0 +1,6 @@
+{
+  "javascript.preferences.quoteStyle": "single",
+  "editor.minimap.enabled": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "javascript.validate.enable": false
+}

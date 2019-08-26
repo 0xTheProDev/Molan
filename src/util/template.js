@@ -7,7 +7,7 @@ int main(void) {
 }
 `;
 
-const cpp_template = 
+const cpp_template =
 `#include <iostream>
 using namespace std;
 
@@ -17,7 +17,7 @@ int main() {
 }
 `;
 
-const java_template = 
+const java_template =
 `import java.io.*;
 
 class Molan {
@@ -27,7 +27,7 @@ class Molan {
 }
 `;
 
-const py_template = 
+const py_template =
 `# Write Codes Here
 `;
 

@@ -1,13 +1,13 @@
+// @flow
 import axios from 'axios';
-import { SUBMIT } from 'type/actionTypes';
-import { BASE_URL } from './baseUrl';
+import ACTIONS from 'constants/actions';
 
 export default function submitAction(formData) {
-    if (typeof formData !== 'undefined' && formData !== null) {
-        const request = axios.post(BASE_URL + '/submit', formData);
-        return {
-            type:    SUBMIT,
-            payload: request
-        };
-    }
+  if (formData) {
+    const request = axios.post('/submit', formData);
+    return {
+      type: ACTIONS.SUBMIT_CODE,
+      payload: request
+    };
+  }
 }
