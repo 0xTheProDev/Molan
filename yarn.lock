@@ -8564,7 +8564,7 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-live-clock@^3.1.0:
+react-live-clock@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/react-live-clock/-/react-live-clock-3.1.0.tgz#172ea798f450e9f538a9e03252230b4595ddde86"
   integrity sha512-oysXonS/8rOAIz5XDGT2kag1/W9xnofGSglN8zPN0OLKmqnGHUMtyLsn+De85hmOo/LgBDm7d6ae4IHQVDk3Og==
@@ -8581,7 +8581,7 @@ react-live-clock@^3.1.0:
     monaco-editor "0.16.2"
     react "16.4.1"
 
-react-notifications@^1.4.3:
+react-notifications@1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/react-notifications/-/react-notifications-1.4.3.tgz#7060d339896f125a5b183ebcd04526980a433222"
   integrity sha1-cGDTOYlvElpbGD680EUmmApDMiI=
@@ -9229,14 +9229,14 @@ selfsigned@^1.9.1:
   dependencies:
     node-forge "0.7.5"
 
-semantic-ui-css@^2.4.1:
+semantic-ui-css@2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/semantic-ui-css/-/semantic-ui-css-2.4.1.tgz#f5aea39fafb787cbd905ec724272a3f9cba9004a"
   integrity sha512-Pkp0p9oWOxlH0kODx7qFpIRYpK1T4WJOO4lNnpNPOoWKCrYsfHqYSKgk5fHfQtnWnsAKy7nLJMW02bgDWWFZFg==
   dependencies:
     jquery x.*
 
-semantic-ui-react@^0.88.0:
+semantic-ui-react@0.88.0:
   version "0.88.0"
   resolved "https://registry.yarnpkg.com/semantic-ui-react/-/semantic-ui-react-0.88.0.tgz#7048aad80190b8196efc6e77babde21c50557b83"
   integrity sha512-+rr4bKAkJIK4fYdJVY/IcL2waPUHLShUmveQNqsQoT7EOKDEo+cNKkiQMjBQBv2q5OaVlrQAitkXkw5sejncNQ==
