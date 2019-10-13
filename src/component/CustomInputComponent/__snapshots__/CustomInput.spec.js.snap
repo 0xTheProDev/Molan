@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::CustomInput::CustomInput should render with base structure 1`] = `
+<Grid>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          className="light"
+          onChange={[Function]}
+          placeholder="Enter your input here"
+          rows={3}
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+</Grid>
+`;

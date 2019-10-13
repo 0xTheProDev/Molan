@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loader Component should render 1`] = `
+<div
+  className="loader-container"
+>
+  <Dimmer
+    active={true}
+    inverted={true}
+  >
+    <Loader
+      content="Loading"
+      inverted={true}
+    />
+  </Dimmer>
+  <Image
+    as="img"
+    src="text.png"
+    ui={true}
+  />
+</div>
+`;

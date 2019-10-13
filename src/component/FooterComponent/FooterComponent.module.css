@@ -1,0 +1,44 @@
+.footer-content {
+  height: 60px !important;
+  background-color: #FFF8DC !important;
+}
+
+.service-status {
+  min-width: 120px;
+  border: 1px solid rgba(34,36,38,.15) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+}
+
+.service-status:hover {
+  border-color: #000 !important;
+}
+
+.service-status:active, .service-status:focus {
+  border-color: #85b7d9 !important;
+}
+
+.copyright {
+  float: left;
+}
+
+.footer-cols {
+  float: right;
+}
+
+@media (min-width: 600px) {
+  .service-status {
+      padding: 5px 0 !important;
+      margin: 0 180px !important;
+  }
+
+  .footer-cols {
+      width: 40%;
+  }
+}
+
+@media (max-width: 599px) {
+  .service-status {
+      padding: 5px !important;
+  }
+}

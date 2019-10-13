@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::FooterComponent::FooterComponent Test CopyRightSection should render with base structure 1`] = `
+<div
+  className="copyright"
+  role="contentinfo"
+>
+  <Segment
+    basic={true}
+  >
+    <i>
+      ©
+    </i>
+    <span
+      className="lg-only"
+    >
+      All rights reserved by
+    </span>
+    <a
+      href="https://github.com/BytesClub"
+      key="https://github.com/BytesClub"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Bytes Club
+    </a>
+    <a
+      href="https://progyan1997.github.io"
+      key="https://progyan1997.github.io"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Progyan Bhattacharya
+    </a>
+  </Segment>
+</div>
+`;
+
+exports[`Component::FooterComponent::FooterComponent Test ServiceStatusSection should render status icon and text properly when service failed 1`] = `
+<Grid
+  centered={true}
+  columns={1}
+  relaxed={true}
+>
+  <GridColumn>
+    <Segment
+      basic={true}
+      textAlign="center"
+    >
+      <Button
+        as="button"
+        className="service-status"
+        onClick={[Function]}
+        role="status"
+      >
+        <Icon
+          aria-hidden="Failed"
+          aria-label="Failed"
+          as="i"
+          color="red"
+          name="close"
+        />
+        Service Status
+      </Button>
+    </Segment>
+  </GridColumn>
+</Grid>
+`;
+
+exports[`Component::FooterComponent::FooterComponent Test ServiceStatusSection should render status icon and text properly when service loaded 1`] = `
+<Grid
+  centered={true}
+  columns={1}
+  relaxed={true}
+>
+  <GridColumn>
+    <Segment
+      basic={true}
+      textAlign="center"
+    >
+      <Button
+        as="button"
+        className="service-status"
+        onClick={[Function]}
+        role="status"
+      >
+        <Icon
+          aria-hidden="Ok"
+          aria-label="Ok"
+          as="i"
+          color="green"
+          name="check"
+        />
+        Service Status
+      </Button>
+    </Segment>
+  </GridColumn>
+</Grid>
+`;
+
+exports[`Component::FooterComponent::FooterComponent Test ServiceStatusSection should render with base structure 1`] = `
+<Grid
+  centered={true}
+  columns={1}
+  relaxed={true}
+>
+  <GridColumn>
+    <Segment
+      basic={true}
+      textAlign="center"
+    >
+      <Button
+        as="button"
+        className="service-status"
+        onClick={[Function]}
+        role="status"
+      >
+        <Icon
+          aria-hidden="Loading"
+          aria-label="Loading"
+          as="i"
+          color="yellow"
+          name="question"
+        />
+        Service Status
+      </Button>
+    </Segment>
+  </GridColumn>
+</Grid>
+`;
+
+exports[`Component::FooterComponent::FooterComponent should render status icon and text properly when service failed 1`] = `
+<div
+  className="footer-content"
+>
+  <CopyRightSection
+    CopyRightHolders={
+      Array [
+        Object {
+          "title": "Bytes Club",
+          "url": "https://github.com/BytesClub",
+        },
+        Object {
+          "title": "Progyan Bhattacharya",
+          "url": "https://progyan1997.github.io",
+        },
+      ]
+    }
+    CopyRightTitleText="All rights reserved by"
+    ServiceStatus={
+      Object {
+        "color": "red",
+        "icon": "close",
+        "label": "Failed",
+      }
+    }
+    ServiceStatusTitleText="Service Status"
+    reloadServiceStatus={[Function]}
+  />
+  <div
+    className="footer-cols"
+  >
+    <ServiceStatusSection
+      CopyRightHolders={
+        Array [
+          Object {
+            "title": "Bytes Club",
+            "url": "https://github.com/BytesClub",
+          },
+          Object {
+            "title": "Progyan Bhattacharya",
+            "url": "https://progyan1997.github.io",
+          },
+        ]
+      }
+      CopyRightTitleText="All rights reserved by"
+      ServiceStatus={
+        Object {
+          "color": "red",
+          "icon": "close",
+          "label": "Failed",
+        }
+      }
+      ServiceStatusTitleText="Service Status"
+      reloadServiceStatus={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`Component::FooterComponent::FooterComponent should render status icon and text properly when service loaded 1`] = `
+<div
+  className="footer-content"
+>
+  <CopyRightSection
+    CopyRightHolders={
+      Array [
+        Object {
+          "title": "Bytes Club",
+          "url": "https://github.com/BytesClub",
+        },
+        Object {
+          "title": "Progyan Bhattacharya",
+          "url": "https://progyan1997.github.io",
+        },
+      ]
+    }
+    CopyRightTitleText="All rights reserved by"
+    ServiceStatus={
+      Object {
+        "color": "green",
+        "icon": "check",
+        "label": "Ok",
+      }
+    }
+    ServiceStatusTitleText="Service Status"
+    reloadServiceStatus={[Function]}
+  />
+  <div
+    className="footer-cols"
+  >
+    <ServiceStatusSection
+      CopyRightHolders={
+        Array [
+          Object {
+            "title": "Bytes Club",
+            "url": "https://github.com/BytesClub",
+          },
+          Object {
+            "title": "Progyan Bhattacharya",
+            "url": "https://progyan1997.github.io",
+          },
+        ]
+      }
+      CopyRightTitleText="All rights reserved by"
+      ServiceStatus={
+        Object {
+          "color": "green",
+          "icon": "check",
+          "label": "Ok",
+        }
+      }
+      ServiceStatusTitleText="Service Status"
+      reloadServiceStatus={[Function]}
+    />
+  </div>
+</div>
+`;
+
+exports[`Component::FooterComponent::FooterComponent should render with base structure 1`] = `
+<div
+  className="footer-content"
+>
+  <CopyRightSection
+    CopyRightHolders={
+      Array [
+        Object {
+          "title": "Bytes Club",
+          "url": "https://github.com/BytesClub",
+        },
+        Object {
+          "title": "Progyan Bhattacharya",
+          "url": "https://progyan1997.github.io",
+        },
+      ]
+    }
+    CopyRightTitleText="All rights reserved by"
+    ServiceStatus={
+      Object {
+        "color": "yellow",
+        "icon": "question",
+        "label": "Loading",
+      }
+    }
+    ServiceStatusTitleText="Service Status"
+    reloadServiceStatus={[Function]}
+  />
+  <div
+    className="footer-cols"
+  >
+    <ServiceStatusSection
+      CopyRightHolders={
+        Array [
+          Object {
+            "title": "Bytes Club",
+            "url": "https://github.com/BytesClub",
+          },
+          Object {
+            "title": "Progyan Bhattacharya",
+            "url": "https://progyan1997.github.io",
+          },
+        ]
+      }
+      CopyRightTitleText="All rights reserved by"
+      ServiceStatus={
+        Object {
+          "color": "yellow",
+          "icon": "question",
+          "label": "Loading",
+        }
+      }
+      ServiceStatusTitleText="Service Status"
+      reloadServiceStatus={[Function]}
+    />
+  </div>
+</div>
+`;

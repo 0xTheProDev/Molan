@@ -1,0 +1,845 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::IOComponent::Integration Suite should render with base structure 1`] = `
+<IOComponentFactory
+  input="Some Input here"
+  output="Some Output here"
+  status={0}
+>
+  <IOComponent
+    CustomInputText="Custom Input"
+    CustomOutputText="Custom Output"
+    InputFieldPlaceholder="No Input Provided"
+    OutputFieldPlaceholder="No Output to Show"
+    StatusText="Status"
+    color="teal"
+    input="Some Input here"
+    output="Some Output here"
+    status="Processing"
+  >
+    <Grid>
+      <div
+        className="ui grid"
+      >
+        <GridRow>
+          <div
+            className="row"
+          >
+            <GridColumn
+              color="teal"
+            >
+              <div
+                className="teal column"
+              >
+                <label
+                  htmlFor="compiler_status"
+                >
+                  Status
+                </label>
+                <span
+                  id="compiler_status"
+                >
+                  Processing
+                </span>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_input"
+                    >
+                      Custom Input
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_input"
+                      placeholder="No Input Provided"
+                      rows={3}
+                      value="Some Input here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_input"
+                              placeholder="No Input Provided"
+                              rows="3"
+                            >
+                              Some Input here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_input"
+                                placeholder="No Input Provided"
+                                rows="3"
+                              >
+                                Some Input here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_input"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Input Provided"
+                            rows={3}
+                            value="Some Input here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_output"
+                    >
+                      Custom Output
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_output"
+                      placeholder="No Output to Show"
+                      rows={3}
+                      value="Some Output here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_output"
+                              placeholder="No Output to Show"
+                              rows="3"
+                            >
+                              Some Output here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_output"
+                                placeholder="No Output to Show"
+                                rows="3"
+                              >
+                                Some Output here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_output"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Output to Show"
+                            rows={3}
+                            value="Some Output here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+      </div>
+    </Grid>
+  </IOComponent>
+</IOComponentFactory>
+`;
+
+exports[`Component::IOComponent::Integration Suite should render with base structure 2`] = `
+<IOComponentFactory
+  input="Some Input here"
+  output="Some Output here"
+  status={1}
+>
+  <IOComponent
+    CustomInputText="Custom Input"
+    CustomOutputText="Custom Output"
+    InputFieldPlaceholder="No Input Provided"
+    OutputFieldPlaceholder="No Output to Show"
+    StatusText="Status"
+    color="yellow"
+    input="Some Input here"
+    output="Some Output here"
+    status="Compilation Error"
+  >
+    <Grid>
+      <div
+        className="ui grid"
+      >
+        <GridRow>
+          <div
+            className="row"
+          >
+            <GridColumn
+              color="yellow"
+            >
+              <div
+                className="yellow column"
+              >
+                <label
+                  htmlFor="compiler_status"
+                >
+                  Status
+                </label>
+                <span
+                  id="compiler_status"
+                >
+                  Compilation Error
+                </span>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_input"
+                    >
+                      Custom Input
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_input"
+                      placeholder="No Input Provided"
+                      rows={3}
+                      value="Some Input here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_input"
+                              placeholder="No Input Provided"
+                              rows="3"
+                            >
+                              Some Input here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_input"
+                                placeholder="No Input Provided"
+                                rows="3"
+                              >
+                                Some Input here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_input"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Input Provided"
+                            rows={3}
+                            value="Some Input here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_output"
+                    >
+                      Custom Output
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_output"
+                      placeholder="No Output to Show"
+                      rows={3}
+                      value="Some Output here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_output"
+                              placeholder="No Output to Show"
+                              rows="3"
+                            >
+                              Some Output here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_output"
+                                placeholder="No Output to Show"
+                                rows="3"
+                              >
+                                Some Output here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_output"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Output to Show"
+                            rows={3}
+                            value="Some Output here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+      </div>
+    </Grid>
+  </IOComponent>
+</IOComponentFactory>
+`;
+
+exports[`Component::IOComponent::Integration Suite should render with base structure 3`] = `
+<IOComponentFactory
+  input="Some Input here"
+  output="Some Output here"
+  status={2}
+>
+  <IOComponent
+    CustomInputText="Custom Input"
+    CustomOutputText="Custom Output"
+    InputFieldPlaceholder="No Input Provided"
+    OutputFieldPlaceholder="No Output to Show"
+    StatusText="Status"
+    color="red"
+    input="Some Input here"
+    output="Some Output here"
+    status="Runtime Error"
+  >
+    <Grid>
+      <div
+        className="ui grid"
+      >
+        <GridRow>
+          <div
+            className="row"
+          >
+            <GridColumn
+              color="red"
+            >
+              <div
+                className="red column"
+              >
+                <label
+                  htmlFor="compiler_status"
+                >
+                  Status
+                </label>
+                <span
+                  id="compiler_status"
+                >
+                  Runtime Error
+                </span>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_input"
+                    >
+                      Custom Input
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_input"
+                      placeholder="No Input Provided"
+                      rows={3}
+                      value="Some Input here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_input"
+                              placeholder="No Input Provided"
+                              rows="3"
+                            >
+                              Some Input here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_input"
+                                placeholder="No Input Provided"
+                                rows="3"
+                              >
+                                Some Input here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_input"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Input Provided"
+                            rows={3}
+                            value="Some Input here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_output"
+                    >
+                      Custom Output
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_output"
+                      placeholder="No Output to Show"
+                      rows={3}
+                      value="Some Output here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_output"
+                              placeholder="No Output to Show"
+                              rows="3"
+                            >
+                              Some Output here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_output"
+                                placeholder="No Output to Show"
+                                rows="3"
+                              >
+                                Some Output here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_output"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Output to Show"
+                            rows={3}
+                            value="Some Output here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+      </div>
+    </Grid>
+  </IOComponent>
+</IOComponentFactory>
+`;
+
+exports[`Component::IOComponent::Integration Suite should render with base structure 4`] = `
+<IOComponentFactory
+  input="Some Input here"
+  output="Some Output here"
+  status={3}
+>
+  <IOComponent
+    CustomInputText="Custom Input"
+    CustomOutputText="Custom Output"
+    InputFieldPlaceholder="No Input Provided"
+    OutputFieldPlaceholder="No Output to Show"
+    StatusText="Status"
+    color="green"
+    input="Some Input here"
+    output="Some Output here"
+    status="Success"
+  >
+    <Grid>
+      <div
+        className="ui grid"
+      >
+        <GridRow>
+          <div
+            className="row"
+          >
+            <GridColumn
+              color="green"
+            >
+              <div
+                className="green column"
+              >
+                <label
+                  htmlFor="compiler_status"
+                >
+                  Status
+                </label>
+                <span
+                  id="compiler_status"
+                >
+                  Success
+                </span>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_input"
+                    >
+                      Custom Input
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_input"
+                      placeholder="No Input Provided"
+                      rows={3}
+                      value="Some Input here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_input"
+                              placeholder="No Input Provided"
+                              rows="3"
+                            >
+                              Some Input here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_input"
+                                placeholder="No Input Provided"
+                                rows="3"
+                              >
+                                Some Input here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_input"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Input Provided"
+                            rows={3}
+                            value="Some Input here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <label
+                      htmlFor="custom_output"
+                    >
+                      Custom Output
+                    </label>
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      disabled={true}
+                      id="custom_output"
+                      placeholder="No Output to Show"
+                      rows={3}
+                      value="Some Output here"
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              disabled=""
+                              id="custom_output"
+                              placeholder="No Output to Show"
+                              rows="3"
+                            >
+                              Some Output here
+                            </textarea>,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                disabled=""
+                                id="custom_output"
+                                placeholder="No Output to Show"
+                                rows="3"
+                              >
+                                Some Output here
+                              </textarea>,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            disabled={true}
+                            id="custom_output"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="No Output to Show"
+                            rows={3}
+                            value="Some Output here"
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+      </div>
+    </Grid>
+  </IOComponent>
+</IOComponentFactory>
+`;

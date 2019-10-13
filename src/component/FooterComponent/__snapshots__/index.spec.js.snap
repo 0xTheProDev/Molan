@@ -1,0 +1,435 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::FooterComponent::Integration Suite should render with base structure 1`] = `
+<FooterComponentFactory
+  ServiceStatus={0}
+  reloadServiceStatus={[MockFunction]}
+>
+  <FooterComponent
+    CopyRightHolders={
+      Array [
+        Object {
+          "title": "Bytes Club",
+          "url": "https://github.com/BytesClub",
+        },
+        Object {
+          "title": "Progyan Bhattacharya",
+          "url": "https://progyan1997.github.io",
+        },
+      ]
+    }
+    CopyRightTitleText="All rights reserved by"
+    ServiceStatus={
+      Object {
+        "color": "yellow",
+        "icon": "question",
+        "label": "Loading",
+      }
+    }
+    ServiceStatusTitleText="Service Status"
+    reloadServiceStatus={[MockFunction]}
+  >
+    <div
+      className="footer-content"
+    >
+      <CopyRightSection
+        CopyRightHolders={
+          Array [
+            Object {
+              "title": "Bytes Club",
+              "url": "https://github.com/BytesClub",
+            },
+            Object {
+              "title": "Progyan Bhattacharya",
+              "url": "https://progyan1997.github.io",
+            },
+          ]
+        }
+        CopyRightTitleText="All rights reserved by"
+        ServiceStatus={
+          Object {
+            "color": "yellow",
+            "icon": "question",
+            "label": "Loading",
+          }
+        }
+        ServiceStatusTitleText="Service Status"
+        reloadServiceStatus={[MockFunction]}
+      >
+        <div
+          className="copyright"
+          role="contentinfo"
+        >
+          <Segment
+            basic={true}
+          >
+            <div
+              className="ui basic segment"
+            >
+              <i>
+                ©
+              </i>
+              <span
+                className="lg-only"
+              >
+                All rights reserved by
+              </span>
+              <a
+                href="https://github.com/BytesClub"
+                key="https://github.com/BytesClub"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Bytes Club
+              </a>
+              <a
+                href="https://progyan1997.github.io"
+                key="https://progyan1997.github.io"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Progyan Bhattacharya
+              </a>
+            </div>
+          </Segment>
+        </div>
+      </CopyRightSection>
+      <div
+        className="footer-cols"
+      >
+        <ServiceStatusSection
+          CopyRightHolders={
+            Array [
+              Object {
+                "title": "Bytes Club",
+                "url": "https://github.com/BytesClub",
+              },
+              Object {
+                "title": "Progyan Bhattacharya",
+                "url": "https://progyan1997.github.io",
+              },
+            ]
+          }
+          CopyRightTitleText="All rights reserved by"
+          ServiceStatus={
+            Object {
+              "color": "yellow",
+              "icon": "question",
+              "label": "Loading",
+            }
+          }
+          ServiceStatusTitleText="Service Status"
+          reloadServiceStatus={[MockFunction]}
+        >
+          <Grid
+            centered={true}
+            columns={1}
+            relaxed={true}
+          >
+            <div
+              className="ui centered relaxed one column grid"
+            >
+              <GridColumn>
+                <div
+                  className="column"
+                >
+                  <Segment
+                    basic={true}
+                    textAlign="center"
+                  >
+                    <div
+                      className="ui basic center aligned segment"
+                    >
+                      <Button
+                        as="button"
+                        className="service-status"
+                        onClick={[MockFunction]}
+                        role="status"
+                      >
+                        <Ref
+                          innerRef={
+                            Object {
+                              "current": <button
+                                class="ui button service-status"
+                                role="status"
+                              >
+                                <i
+                                  aria-hidden="Loading"
+                                  aria-label="Loading"
+                                  class="yellow question icon"
+                                />
+                                Service Status
+                              </button>,
+                            }
+                          }
+                        >
+                          <RefFindNode
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui button service-status"
+                                  role="status"
+                                >
+                                  <i
+                                    aria-hidden="Loading"
+                                    aria-label="Loading"
+                                    class="yellow question icon"
+                                  />
+                                  Service Status
+                                </button>,
+                              }
+                            }
+                          >
+                            <button
+                              className="ui button service-status"
+                              onClick={[Function]}
+                              role="status"
+                            >
+                              <Icon
+                                aria-hidden="Loading"
+                                aria-label="Loading"
+                                as="i"
+                                color="yellow"
+                                name="question"
+                              >
+                                <i
+                                  aria-hidden="Loading"
+                                  aria-label="Loading"
+                                  className="yellow question icon"
+                                  onClick={[Function]}
+                                />
+                              </Icon>
+                              Service Status
+                            </button>
+                          </RefFindNode>
+                        </Ref>
+                      </Button>
+                    </div>
+                  </Segment>
+                </div>
+              </GridColumn>
+            </div>
+          </Grid>
+        </ServiceStatusSection>
+      </div>
+    </div>
+  </FooterComponent>
+</FooterComponentFactory>
+`;
+
+exports[`Component::FooterComponent::Integration Suite should render with base structure 2`] = `
+<FooterComponentFactory
+  ServiceStatus={1}
+  reloadServiceStatus={[MockFunction]}
+>
+  <FooterComponent
+    CopyRightHolders={
+      Array [
+        Object {
+          "title": "Bytes Club",
+          "url": "https://github.com/BytesClub",
+        },
+        Object {
+          "title": "Progyan Bhattacharya",
+          "url": "https://progyan1997.github.io",
+        },
+      ]
+    }
+    CopyRightTitleText="All rights reserved by"
+    ServiceStatus={
+      Object {
+        "color": "green",
+        "icon": "check",
+        "label": "Ok",
+      }
+    }
+    ServiceStatusTitleText="Service Status"
+    reloadServiceStatus={[MockFunction]}
+  >
+    <div
+      className="footer-content"
+    >
+      <CopyRightSection
+        CopyRightHolders={
+          Array [
+            Object {
+              "title": "Bytes Club",
+              "url": "https://github.com/BytesClub",
+            },
+            Object {
+              "title": "Progyan Bhattacharya",
+              "url": "https://progyan1997.github.io",
+            },
+          ]
+        }
+        CopyRightTitleText="All rights reserved by"
+        ServiceStatus={
+          Object {
+            "color": "green",
+            "icon": "check",
+            "label": "Ok",
+          }
+        }
+        ServiceStatusTitleText="Service Status"
+        reloadServiceStatus={[MockFunction]}
+      >
+        <div
+          className="copyright"
+          role="contentinfo"
+        >
+          <Segment
+            basic={true}
+          >
+            <div
+              className="ui basic segment"
+            >
+              <i>
+                ©
+              </i>
+              <span
+                className="lg-only"
+              >
+                All rights reserved by
+              </span>
+              <a
+                href="https://github.com/BytesClub"
+                key="https://github.com/BytesClub"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Bytes Club
+              </a>
+              <a
+                href="https://progyan1997.github.io"
+                key="https://progyan1997.github.io"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Progyan Bhattacharya
+              </a>
+            </div>
+          </Segment>
+        </div>
+      </CopyRightSection>
+      <div
+        className="footer-cols"
+      >
+        <ServiceStatusSection
+          CopyRightHolders={
+            Array [
+              Object {
+                "title": "Bytes Club",
+                "url": "https://github.com/BytesClub",
+              },
+              Object {
+                "title": "Progyan Bhattacharya",
+                "url": "https://progyan1997.github.io",
+              },
+            ]
+          }
+          CopyRightTitleText="All rights reserved by"
+          ServiceStatus={
+            Object {
+              "color": "green",
+              "icon": "check",
+              "label": "Ok",
+            }
+          }
+          ServiceStatusTitleText="Service Status"
+          reloadServiceStatus={[MockFunction]}
+        >
+          <Grid
+            centered={true}
+            columns={1}
+            relaxed={true}
+          >
+            <div
+              className="ui centered relaxed one column grid"
+            >
+              <GridColumn>
+                <div
+                  className="column"
+                >
+                  <Segment
+                    basic={true}
+                    textAlign="center"
+                  >
+                    <div
+                      className="ui basic center aligned segment"
+                    >
+                      <Button
+                        as="button"
+                        className="service-status"
+                        onClick={[MockFunction]}
+                        role="status"
+                      >
+                        <Ref
+                          innerRef={
+                            Object {
+                              "current": <button
+                                class="ui button service-status"
+                                role="status"
+                              >
+                                <i
+                                  aria-hidden="Ok"
+                                  aria-label="Ok"
+                                  class="green check icon"
+                                />
+                                Service Status
+                              </button>,
+                            }
+                          }
+                        >
+                          <RefFindNode
+                            innerRef={
+                              Object {
+                                "current": <button
+                                  class="ui button service-status"
+                                  role="status"
+                                >
+                                  <i
+                                    aria-hidden="Ok"
+                                    aria-label="Ok"
+                                    class="green check icon"
+                                  />
+                                  Service Status
+                                </button>,
+                              }
+                            }
+                          >
+                            <button
+                              className="ui button service-status"
+                              onClick={[Function]}
+                              role="status"
+                            >
+                              <Icon
+                                aria-hidden="Ok"
+                                aria-label="Ok"
+                                as="i"
+                                color="green"
+                                name="check"
+                              >
+                                <i
+                                  aria-hidden="Ok"
+                                  aria-label="Ok"
+                                  className="green check icon"
+                                  onClick={[Function]}
+                                />
+                              </Icon>
+                              Service Status
+                            </button>
+                          </RefFindNode>
+                        </Ref>
+                      </Button>
+                    </div>
+                  </Segment>
+                </div>
+              </GridColumn>
+            </div>
+          </Grid>
+        </ServiceStatusSection>
+      </div>
+    </div>
+  </FooterComponent>
+</FooterComponentFactory>
+`;

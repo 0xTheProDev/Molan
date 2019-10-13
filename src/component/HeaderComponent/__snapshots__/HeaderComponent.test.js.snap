@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should render 1`] = `
+<div
+  className="header-content"
+>
+  <div
+    className="brand"
+  >
+    <Image
+      as="img"
+      size="small"
+      src="molan.png"
+      ui={true}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component should render 1`] = `
+<div
+  className="footer-content"
+>
+  <div
+    className="copyright"
+  >
+    <Segment
+      basic={true}
+    >
+      © 
+      <span
+        className="lg-only"
+      >
+        All rights reserved by
+      </span>
+        
+      <a
+        href="https://github.com/Tech-Mantra"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Tech-Mantra
+      </a>
+      ,   
+      <a
+        href="https://github.com/BytesClub"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Bytes Club
+      </a>
+    </Segment>
+  </div>
+  <div
+    className="footer-cols"
+  >
+    <Grid
+      centered={true}
+      columns={1}
+      relaxed={true}
+    >
+      <GridColumn>
+        <Segment
+          basic={true}
+          textAlign="center"
+        >
+          <div
+            className="service-status"
+            onClick={[Function]}
+          >
+            <Icon
+              aria-hidden="Loading"
+              aria-label="Loading"
+              as="i"
+              color="yellow"
+              name="question"
+            />
+            Service Status
+          </div>
+        </Segment>
+      </GridColumn>
+    </Grid>
+  </div>
+</div>
+`;
+
+exports[`Footer Component should show service status when service is up 1`] = `
+<div
+  className="footer-content"
+>
+  <div
+    className="copyright"
+  >
+    <Segment
+      basic={true}
+    >
+      © 
+      <span
+        className="lg-only"
+      >
+        All rights reserved by
+      </span>
+        
+      <a
+        href="https://github.com/Tech-Mantra"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Tech-Mantra
+      </a>
+      ,   
+      <a
+        href="https://github.com/BytesClub"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Bytes Club
+      </a>
+    </Segment>
+  </div>
+  <div
+    className="footer-cols"
+  >
+    <Grid
+      centered={true}
+      columns={1}
+      relaxed={true}
+    >
+      <GridColumn>
+        <Segment
+          basic={true}
+          textAlign="center"
+        >
+          <div
+            className="service-status"
+            onClick={[Function]}
+          >
+            <Icon
+              aria-hidden="Loading"
+              aria-label="Loading"
+              as="i"
+              color="yellow"
+              name="question"
+            />
+            Service Status
+          </div>
+        </Segment>
+      </GridColumn>
+    </Grid>
+  </div>
+</div>
+`;
+
+exports[`Footer Component should show service status when service is up 2`] = `
+<div
+  className="footer-content"
+>
+  <div
+    className="copyright"
+  >
+    <Segment
+      basic={true}
+    >
+      © 
+      <span
+        className="lg-only"
+      >
+        All rights reserved by
+      </span>
+        
+      <a
+        href="https://github.com/Tech-Mantra"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Tech-Mantra
+      </a>
+      ,   
+      <a
+        href="https://github.com/BytesClub"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        Bytes Club
+      </a>
+    </Segment>
+  </div>
+  <div
+    className="footer-cols"
+  >
+    <Grid
+      centered={true}
+      columns={1}
+      relaxed={true}
+    >
+      <GridColumn>
+        <Segment
+          basic={true}
+          textAlign="center"
+        >
+          <div
+            className="service-status"
+            onClick={[Function]}
+          >
+            <Icon
+              aria-hidden="Loading"
+              aria-label="Loading"
+              as="i"
+              color="yellow"
+              name="question"
+            />
+            Service Status
+          </div>
+        </Segment>
+      </GridColumn>
+    </Grid>
+  </div>
+</div>
+`;

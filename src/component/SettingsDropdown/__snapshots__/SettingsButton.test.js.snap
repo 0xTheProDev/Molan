@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Button should render 1`] = `
+<Ref
+  innerRef={
+    Object {
+      "current": null,
+    }
+  }
+>
+  <button
+    className="ui basic right floated button"
+    onClick={[Function]}
+    title="Settings"
+  >
+    <Icon
+      as="i"
+      name="settings"
+    />
+  </button>
+</Ref>
+`;

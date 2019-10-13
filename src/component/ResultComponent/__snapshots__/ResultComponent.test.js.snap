@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Result Component should render 1`] = `
+<Grid>
+  <GridRow>
+    <GridColumn>
+      Status: 
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_input"
+        >
+          Custom Input:
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_input"
+          placeholder="No Input to show"
+          rows={3}
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_output"
+        >
+          Custom Output:
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_output"
+          placeholder="No Output to show"
+          rows={3}
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+</Grid>
+`;
+
+exports[`Result Component should render Loader if results not available 1`] = `<LoaderComponent />`;
+
+exports[`Result Component should render results if available 1`] = `
+<Grid>
+  <GridRow>
+    <GridColumn>
+      Status: 
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_input"
+        >
+          Custom Input:
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_input"
+          placeholder="No Input to show"
+          rows={3}
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_output"
+        >
+          Custom Output:
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_output"
+          placeholder="No Output to show"
+          rows={3}
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+</Grid>
+`;

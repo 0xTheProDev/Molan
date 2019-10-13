@@ -18,6 +18,9 @@
     "semantic-ui-react": "0.88.0"
   },
   "devDependencies": {
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.15.1",
+    "enzyme-to-json": "3.4.3",
     "react-scripts": "3.1.1"
   },
   "scripts": {
@@ -25,6 +28,7 @@
     "start:web": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "test:coverage": "yarn test --coverage",
     "eject": "react-scripts eject"
   },
   "license": "GPL-3.0",
@@ -33,5 +37,10 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  }
 }

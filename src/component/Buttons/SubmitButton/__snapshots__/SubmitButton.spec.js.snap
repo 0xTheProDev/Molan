@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:SubmitButton::SubmitButton should render with base structure 1`] = `
+<Button
+  as="button"
+  color="green"
+  floated="right"
+  onClick={[MockFunction]}
+  size="large"
+>
+  Submit
+</Button>
+`;

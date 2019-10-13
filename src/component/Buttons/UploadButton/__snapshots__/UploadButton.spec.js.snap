@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:UploadButton::UploadButton should render with base structure 1`] = `
+<Button
+  animated="vertical"
+  as="button"
+  floated="right"
+  onClick={[MockFunction]}
+  title="Upload"
+>
+  <ButtonContent
+    hidden={true}
+  >
+    Upload
+  </ButtonContent>
+  <ButtonContent
+    visible={true}
+  >
+    <Icon
+      as="i"
+      name="upload"
+    />
+  </ButtonContent>
+  <input
+    accepts="text/plain"
+    className="file-input"
+    onChange={[MockFunction]}
+    type="file"
+  />
+</Button>
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::HeaderComponent should render with base structure 1`] = `
+<div
+  className="header-content"
+>
+  <div
+    className="brand"
+    role="banner"
+  >
+    <Image
+      alt="Molan iDE"
+      as="img"
+      size="small"
+      src="molan_logo.png"
+      ui={true}
+    />
+  </div>
+  <div
+    className="clock-area"
+  >
+    <i
+      aria-hidden="true"
+      className="clock outline icon"
+    />
+    <ReactLiveClock
+      date={null}
+      format="hh:mm:ssa"
+      interval={1000}
+      ticking={true}
+      timezone={null}
+    />
+  </div>
+</div>
+`;

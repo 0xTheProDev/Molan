@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:SaveButton::SaveButton should render with base structure 1`] = `
+<Button
+  animated="fade"
+  as="button"
+  floated="right"
+  onClick={[MockFunction]}
+  title="Save"
+>
+  <ButtonContent
+    hidden={true}
+  >
+    Save
+  </ButtonContent>
+  <ButtonContent
+    visible={true}
+  >
+    <Icon
+      as="i"
+      name="save"
+    />
+  </ButtonContent>
+</Button>
+`;

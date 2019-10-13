@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings Dropdown should render 1`] = `
+<div>
+  <Popup
+    disabled={false}
+    eventsEnabled={true}
+    offset={0}
+    on="click"
+    pinned={false}
+    position="bottom center"
+    trigger={
+      <Button
+        as="button"
+        basic={true}
+        floated="right"
+        title="Settings"
+      >
+        <Icon
+          as="i"
+          name="settings"
+        />
+      </Button>
+    }
+  >
+    <Header
+      as="h5"
+    >
+      Settings
+    </Header>
+    <Checkbox
+      checked={false}
+      label="Night Mode"
+      onChange={[MockFunction]}
+      type="checkbox"
+    />
+    <Checkbox
+      checked={false}
+      label="Show Line Numbers"
+      onChange={[MockFunction]}
+      type="checkbox"
+    />
+    <Checkbox
+      checked={false}
+      label="Show Minimap"
+      onChange={[MockFunction]}
+      type="checkbox"
+    />
+  </Popup>
+  <Button
+    active={false}
+    as="button"
+    basic={true}
+    floated="right"
+    onClick={[MockFunction]}
+    title="Full Screen"
+  >
+    <Icon
+      as="i"
+      name="expand"
+    />
+  </Button>
+</div>
+`;

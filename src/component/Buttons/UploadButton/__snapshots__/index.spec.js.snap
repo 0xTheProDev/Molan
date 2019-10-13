@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:UploadButton::Integration Suite should render with base structure 1`] = `
+<UploadButtonFactory
+  UploadButtonText="Upload"
+  onUploadFile={[MockFunction]}
+  onUploadFileError={[MockFunction]}
+>
+  <UploadButton
+    AllowedFileTypes="text/x-csrc,text/x-c++src,text/x-java,text/x-python,text/plain"
+    InputElementRef={
+      Object {
+        "current": <input
+          accepts="text/x-csrc,text/x-c++src,text/x-java,text/x-python,text/plain"
+          class="file-input"
+          type="file"
+        />,
+      }
+    }
+    UploadButtonText="Upload"
+    onChangeHandler={[Function]}
+    onClickHandler={[Function]}
+  >
+    <Button
+      animated="vertical"
+      as="button"
+      floated="right"
+      onClick={[Function]}
+      title="Upload"
+    >
+      <Ref
+        innerRef={
+          Object {
+            "current": <button
+              class="ui vertical animated right floated button"
+              title="Upload"
+            >
+              <div
+                class="hidden content"
+              >
+                Upload
+              </div>
+              <div
+                class="visible content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="upload icon"
+                />
+              </div>
+              <input
+                accepts="text/x-csrc,text/x-c++src,text/x-java,text/x-python,text/plain"
+                class="file-input"
+                type="file"
+              />
+            </button>,
+          }
+        }
+      >
+        <RefFindNode
+          innerRef={
+            Object {
+              "current": <button
+                class="ui vertical animated right floated button"
+                title="Upload"
+              >
+                <div
+                  class="hidden content"
+                >
+                  Upload
+                </div>
+                <div
+                  class="visible content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="upload icon"
+                  />
+                </div>
+                <input
+                  accepts="text/x-csrc,text/x-c++src,text/x-java,text/x-python,text/plain"
+                  class="file-input"
+                  type="file"
+                />
+              </button>,
+            }
+          }
+        >
+          <button
+            className="ui vertical animated right floated button"
+            onClick={[Function]}
+            title="Upload"
+          >
+            <ButtonContent
+              hidden={true}
+            >
+              <div
+                className="hidden content"
+              >
+                Upload
+              </div>
+            </ButtonContent>
+            <ButtonContent
+              visible={true}
+            >
+              <div
+                className="visible content"
+              >
+                <Icon
+                  as="i"
+                  name="upload"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="upload icon"
+                    onClick={[Function]}
+                  />
+                </Icon>
+              </div>
+            </ButtonContent>
+            <input
+              accepts="text/x-csrc,text/x-c++src,text/x-java,text/x-python,text/plain"
+              className="file-input"
+              onChange={[Function]}
+              type="file"
+            />
+          </button>
+        </RefFindNode>
+      </Ref>
+    </Button>
+  </UploadButton>
+</UploadButtonFactory>
+`;

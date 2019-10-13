@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::CustomInput::Integration Suite should render with base structure 1`] = `
+<CustomInputFactory
+  onCustomInputChange={[MockFunction]}
+  theme="light"
+>
+  <CustomInput
+    CustomInputPlaceholder="Enter your input here"
+    onCustomInputChange={[Function]}
+    theme="light"
+  >
+    <Grid>
+      <div
+        className="ui grid"
+      >
+        <GridRow
+          columns={1}
+        >
+          <div
+            className="one column row"
+          >
+            <GridColumn
+              stretched={true}
+            >
+              <div
+                className="stretched column"
+              >
+                <Form
+                  as="form"
+                >
+                  <form
+                    className="ui form"
+                    onSubmit={[Function]}
+                  >
+                    <TextArea
+                      as="textarea"
+                      autoHeight={true}
+                      className="light"
+                      onChange={[Function]}
+                      placeholder="Enter your input here"
+                      rows={3}
+                    >
+                      <Ref
+                        innerRef={
+                          Object {
+                            "current": <textarea
+                              class="light"
+                              placeholder="Enter your input here"
+                              rows="3"
+                            />,
+                          }
+                        }
+                      >
+                        <RefFindNode
+                          innerRef={
+                            Object {
+                              "current": <textarea
+                                class="light"
+                                placeholder="Enter your input here"
+                                rows="3"
+                              />,
+                            }
+                          }
+                        >
+                          <textarea
+                            autoHeight={true}
+                            className="light"
+                            onChange={[Function]}
+                            onInput={[Function]}
+                            placeholder="Enter your input here"
+                            rows={3}
+                          />
+                        </RefFindNode>
+                      </Ref>
+                    </TextArea>
+                  </form>
+                </Form>
+              </div>
+            </GridColumn>
+          </div>
+        </GridRow>
+      </div>
+    </Grid>
+  </CustomInput>
+</CustomInputFactory>
+`;

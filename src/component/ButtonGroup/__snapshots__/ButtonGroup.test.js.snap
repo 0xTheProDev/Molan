@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonGroup should render 1`] = `
+<Fragment>
+  <Button
+    animated="fade"
+    as="button"
+    floated="right"
+    onClick={[Function]}
+  >
+    <ButtonContent
+      hidden={true}
+    >
+      Save
+    </ButtonContent>
+    <ButtonContent
+      visible={true}
+    >
+      <Icon
+        as="i"
+        name="save"
+      />
+    </ButtonContent>
+  </Button>
+  <Button
+    animated={true}
+    as="button"
+    floated="right"
+  >
+    <ButtonContent
+      hidden={true}
+    >
+      Reload
+    </ButtonContent>
+    <ButtonContent
+      visible={true}
+    >
+      <Icon
+        as="i"
+        name="redo"
+      />
+    </ButtonContent>
+  </Button>
+  <Button
+    animated="vertical"
+    as="button"
+    floated="right"
+    onClick={[Function]}
+  >
+    <ButtonContent
+      hidden={true}
+    >
+      Upload
+    </ButtonContent>
+    <ButtonContent
+      visible={true}
+    >
+      <Icon
+        as="i"
+        name="upload"
+      />
+    </ButtonContent>
+    <input
+      accepts=".c,.cpp,.java,.js,.py"
+      className="file-input"
+      onChange={[Function]}
+      type="file"
+    />
+  </Button>
+</Fragment>
+`;

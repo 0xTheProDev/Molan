@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::IOComponent::IOComponent should render with base structure 1`] = `
+<Grid>
+  <GridRow>
+    <GridColumn
+      color="yellow"
+    >
+      <label
+        htmlFor="compiler_status"
+      >
+        Status
+      </label>
+      <span
+        id="compiler_status"
+      >
+        Compilation Error
+      </span>
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_input"
+        >
+          Custom Input
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_input"
+          placeholder="No Input Provided"
+          rows={3}
+          value="Some Input Here"
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+  <GridRow
+    columns={1}
+  >
+    <GridColumn
+      stretched={true}
+    >
+      <Form
+        as="form"
+      >
+        <label
+          htmlFor="custom_output"
+        >
+          Custom Output
+        </label>
+        <TextArea
+          as="textarea"
+          autoHeight={true}
+          disabled={true}
+          id="custom_output"
+          placeholder="No Output to Show"
+          rows={3}
+          value="Some Output Here"
+        />
+      </Form>
+    </GridColumn>
+  </GridRow>
+</Grid>
+`;

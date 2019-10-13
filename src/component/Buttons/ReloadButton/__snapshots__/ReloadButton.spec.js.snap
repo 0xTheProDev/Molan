@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:ReloadButton should render with base structure 1`] = `
+<Button
+  animated={true}
+  as="button"
+  floated="right"
+  onClick={[MockFunction]}
+  title="Reload"
+>
+  <ButtonContent
+    hidden={true}
+  >
+    Reload
+  </ButtonContent>
+  <ButtonContent
+    visible={true}
+  >
+    <Icon
+      as="i"
+      name="redo"
+    />
+  </ButtonContent>
+</Button>
+`;

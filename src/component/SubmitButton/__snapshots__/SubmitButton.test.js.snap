@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Submit Button should render 1`] = `
+<Button
+  as="button"
+  color="green"
+  floated="right"
+  onClick={[Function]}
+  size="large"
+  type="button"
+>
+  Submit
+</Button>
+`;

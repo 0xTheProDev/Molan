@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::FullScreenButton should render with base structure 1`] = `
+<Button
+  active={true}
+  as="button"
+  basic={true}
+  floated="right"
+  onClick={[MockFunction]}
+  title="Full Screen"
+>
+  <Icon
+    as="i"
+    name="expand"
+  />
+</Button>
+`;

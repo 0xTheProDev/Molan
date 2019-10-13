@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component::Buttons:SaveButton::Integration Suite should render with base structure 1`] = `
+<SaveButtonFactory
+  SaveButtonText="Save"
+  content="#include <stdio.h>
+
+int main(void) {
+
+return 0;
+}
+"
+  language="c"
+>
+  <SaveButton
+    SaveButtonText="Save"
+    onSaveButtonClick={[Function]}
+  >
+    <Button
+      animated="fade"
+      as="button"
+      floated="right"
+      onClick={[Function]}
+      title="Save"
+    >
+      <Ref
+        innerRef={
+          Object {
+            "current": <button
+              class="ui fade animated right floated button"
+              title="Save"
+            >
+              <div
+                class="hidden content"
+              >
+                Save
+              </div>
+              <div
+                class="visible content"
+              >
+                <i
+                  aria-hidden="true"
+                  class="save icon"
+                />
+              </div>
+            </button>,
+          }
+        }
+      >
+        <RefFindNode
+          innerRef={
+            Object {
+              "current": <button
+                class="ui fade animated right floated button"
+                title="Save"
+              >
+                <div
+                  class="hidden content"
+                >
+                  Save
+                </div>
+                <div
+                  class="visible content"
+                >
+                  <i
+                    aria-hidden="true"
+                    class="save icon"
+                  />
+                </div>
+              </button>,
+            }
+          }
+        >
+          <button
+            className="ui fade animated right floated button"
+            onClick={[Function]}
+            title="Save"
+          >
+            <ButtonContent
+              hidden={true}
+            >
+              <div
+                className="hidden content"
+              >
+                Save
+              </div>
+            </ButtonContent>
+            <ButtonContent
+              visible={true}
+            >
+              <div
+                className="visible content"
+              >
+                <Icon
+                  as="i"
+                  name="save"
+                >
+                  <i
+                    aria-hidden="true"
+                    className="save icon"
+                    onClick={[Function]}
+                  />
+                </Icon>
+              </div>
+            </ButtonContent>
+          </button>
+        </RefFindNode>
+      </Ref>
+    </Button>
+  </SaveButton>
+</SaveButtonFactory>
+`;
